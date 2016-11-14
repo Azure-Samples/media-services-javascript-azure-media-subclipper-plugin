@@ -15,4 +15,4 @@ This is an Azure Media Player plugin that enables subclipping a live or on-deman
 ## Getting Started
 
 # Public Deployment
-A public, hosted deployment of the subclipper is accessible at http://amve.azurewebsites.net/simple.html.
+A public, hosted deployment of the subclipper is available at the [Azure Media Subclipper Plugin webpage](http://amve.azurewebsites.net/simple.html).
