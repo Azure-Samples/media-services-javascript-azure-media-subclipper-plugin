@@ -1,0 +1,15 @@
+﻿html, body {
+    height:100%;
+    width:100%;
+}
+
+#vid1 {
+    width: 640px;
+    height: 480px;
+}
+
+#videoContainer {
+    margin:auto;
+    width: 640px;
+    height: 480px;
+}

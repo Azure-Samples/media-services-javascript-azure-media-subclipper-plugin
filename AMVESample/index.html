@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Azure Media Player - Video Editor Plugin</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Begin External Libraries -->
+    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <!-- End External Libraries -->
+
+    <script src="//amp.azure.net/libs/amp/1.7.4/azuremediaplayer.min.js"></script>
+    <script src="amve.min.js"></script>
+    <script src="amvePreview.js"></script>
+
+    <!-- Begin External CSS -->
+    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <!-- End External CSS -->
+
+    <link rel="stylesheet" href="http://amsplayer.azurewebsites.net/css/normalize.css">
+    <link rel="stylesheet" href="http://amsplayer.azurewebsites.net/css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="//amp.azure.net/libs/amp/1.7.4/skins/amp-default/azuremediaplayer.min.css" />
+    <link rel="stylesheet" type="text/css" href="amve.min.css" />
+    <link rel="stylesheet" type="text/css" href="amvePreview.css" />
+
+</head>
+<body>
+    <!-- Add your site or application content here -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="z-index:10000">
+        <div class="container">
+            <div class="navbar-header col-sm-12">
+                <a class="navbar-brand" href="http://aka.ms/ampinfo" target="_blank">
+                    <img width="27" height="30" title="" alt="" style="display:inline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAApCAMAAACFghBKAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB6VBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAACMv10hAAAAoXRSTlMASdBSKqXCLw5//aEhV+P0ew00s+lbEpLJTl3n+J9lPuiiOcoaC3qOEBeWwwlz8cYBi0ekyAITiczfRpS888+nWQO1M0LX4KN09V/84rKgLDxca6oy0W32ChHcsCfUQNNefWqrdpivMNthuh2Vgcs/ImOHhmbynLYGbtg7cM5xD7/vFM3hxzcpdZogvhs4VE8VSBnaVnKIqbftI/7SaJPrZNytRAYAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAACTklEQVQ4y32U918TQRDFhyhigICSCAoGYqIISAjqKSogwWDBgiAWiA0VBEsQa7BgiRB7r4Bt/1NvZvYue7lL3g/5vHn7vc3e7O4BZKnAJVxLIL+WFgrUsqI8zHJ3sZAqKc0FecpERuUrVjoxFV5hlW+VjamsEnatXmOFqmsoXuuvrUPV+gPMrVNeIxjizL3ejDbUl3O2sYGDxiauXUHL9KWbOA7U60VzuIWrSGv2WjfL5YW2wFZptW3G4HYTa5NjO0DOu1NCu9o7Ond3Rbu5koN7QHYpRmnPXvn0vjBvBldeSTVRGFZ6tZ+SAyrV24zRQd0dMjE/YYfRHmGqD4OjtND+iIENYHgM3SBTxzE4QU0DOCmpU0N6OIwuDi799zRCZ2jorO7OnWdsBOML6OCi99IIdcFtUgCj5At5i8e8Y5lOX1YoGNd0P+FwvgIqBXClU5Q5UFet1DWf8DlQ1y1UQveTmcGe0RtTZG4qVHAS/S3yUwW3+0E/gMV3sBq6a1IJ7gQ9fU+/VhoksZ7G+j66BwBFGkO0IQ/RJbn3j2juGbyv8Ni4Qk8we6rs9jOiUs+FmJ0z7mMaoxeWk/OSX+WVeSJCrynQJPWG07eMvevD5vZ2eEB5b/1Ey7MaHzauWN37Dx+l/yQnboPP8l/ilbY+S+jLVyzSg1RMjGdB3+RE07IemKH6e6PCpH9Q9jOmZIl5jFraowutqIVoFzE11dbpU/KbsziLWuSiyr5W2/crUgFO8vxSGN9vyCX3vAGVNEBupf4Qk/cbjYolxd9/2eF/zeOQ+fvcwlgAAAAASUVORK5CYII=" />
+                    <span>Azure Media Player - Video Editor Plugin</span>
+                </a>
+                <style>
+                    @media all and (max-width: 350px) {
+                        .msftlogo {
+                            display: none;
+                        }
+                    }
+                </style>
+                <svg class="msftlogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="105" height="25" style="position:relative;float:right;margin-top:12.5px">
+                    <image xlink:href="data:img/png;base64,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" width="105" height="25" style="float:right"></image>
+                </svg>
+            </div>
+            <div class="navbar-collapse collapse">
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron player-page">
+        <center>
+            <!--<h3>Reach the most popular devices anywhere with the best possible format for the device!</h3>-->
+            <!--<h3>Reach popular devices anywhere with the best format for the device!</h3>-->
+            <h3 style="margin-top: 15px; margin-bottom: 0px;">Your content. Multiple devices. One player.</h3>
+        </center>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-md-push-3">
+                <div id="videoContainer">
+                    <div id="amve">
+                        <video id="vid1" class="azuremediaplayer amp-default-skin amp-big-play-centered">
+                            <p class="amp-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video</p>
+                        </video>
+                        <div id="custommetadata">
+                            <input id="test1" type="text" value="Test 1" />
+                            <input id="test2" type="text" value="Test 2" />
+                            <input id="test3" type="text" value="Test 3" />
+                            <input id="test4" type="text" value="Test 4" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                            <input type="text" value="Test N" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="well" id="playersetup">
+
+                    <div id="assetConfig" class="form-group adaptive">
+
+                        <label for="adaptive-url">Adaptive streaming URL from Azure Media Services</label><br /><br />
+
+                        <div class="row">
+                            <div class="col-sm-2">Samples:</div>
+                            <div class="col-sm-10" id="samplesdropdown">
+                                <select class="form-control" id="selectSource" style="width: 100%"></select>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-sm-2">URL:</div>
+                            <div class="col-sm-10">
+                                <span><input style="width:100%;display:inline-block" type="text" class="input-sm form-control" id="adaptive-url" placeholder="Video/Manifest URL" value=""></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-2">
+                                <span id="urlHelp" class="help-block" style="font-size: 0.85em; padding-left: 0.5em;">DASH only at this time</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="config-save" type="button" class="btn btn-sm btn-primary">Update Player</button>
+                </div>
+                <div id="copyrightInfo" class="muted"></div>
+
+                <div class="config-body row" style="margin:0px 0px">
+                </div>
+
+            </div>
+
+            <div class="col-md-3 col-md-pull-9 well" style="font-size:0.95em" id="sidebar">
+                <h3 style="margin-top:0">Getting Started</h3>
+                <p>
+                    It's easy to use Azure Media Player:
+                    <br />
+                    <a href="//aka.ms/ampdocs" class="btn btn-info" target="_blank">documentation</a>
+                    <a href="//aka.ms/ampsamples" class="btn btn-info" target="_blank">samples</a>
+                </p>
+                <p>This demo page allows you to try out some of the features of Azure Media Player - Video Editor Plugin.</p>
+                <ol style="padding-left:25px">
+                    <li>Select a sample or input a video URL from your <a href="http://manage.windowsazure.com">Media Services account</a></li>
+                    <li>Update Player</li>
+                </ol>
+                <p>
+                    Don't have an Azure Media Services account? No worries:
+                    <br />
+                    <a href="http://azure.microsoft.com/en-us/pricing/free-trial/" class="btn btn-warning" target="_blank">start your free trial</a>
+                </p>
+            </div>
+        </div>
+    </div> <!-- /container -->
+    <footer style="position:relative; bottom:0; width:100%; background-color:black; vertical-align:middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="pull-right" style="color:white"><a href="http://www.microsoft.com/en-us/privacystatement/default.aspx" target="_blank">Privacy Statement</a> // <a href="http://azure.microsoft.com/en-us/support/legal/website-terms-of-use/" target="_blank">Terms of Use</a></p>
+                    <p class="pull-right"></p>
+                    <p style="color:white">© Microsoft Corporation 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="http://amsplayer.azurewebsites.net/js/plugins.js"></script>
+    <script src="http://amsplayer.azurewebsites.net/js/vendor/eligrey/FileSaver.min.js"></script>
+
+    <script src="http://amsplayer.azurewebsites.net/AzureMediaPlayer/samples.js"></script>
+    <script src="http://amsplayer.azurewebsites.net/AzureMediaPlayer/languages.js"></script>
+    <script src="http://amsplayer.azurewebsites.net/AzureMediaPlayer/PrettyPrint.js"></script>
+</body>
+</html>
+

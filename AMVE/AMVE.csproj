@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F06D2710-1033-4EC7-95B4-81888BF68964}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AMVE</RootNamespace>
+    <AssemblyName>AMVE</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxMin, Version=5.14.5506.26196, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxMin.5.14.5506.26202\lib\net40\AjaxMin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.TransientFaultHandling.Core, Version=5.1.1209.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\TransientFaultHandling.Core.5.1.1209.1\lib\NET4\Microsoft.Practices.TransientFaultHandling.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.MediaServices.Client, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\windowsazure.mediaservices.3.6.0.0\lib\net45\Microsoft.WindowsAzure.MediaServices.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.MediaServices.Client.Common.BlobTransfer, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\windowsazure.mediaservices.3.6.0.0\lib\net45\Microsoft.WindowsAzure.MediaServices.Client.Common.BlobTransfer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.MediaServices.Client.Common.FileEncryption, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\windowsazure.mediaservices.3.6.0.0\lib\net45\Microsoft.WindowsAzure.MediaServices.Client.Common.FileEncryption.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.MediaServices.Client.Extensions, Version=3.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\windowsazure.mediaservices.extensions.3.3.0.0\lib\net45\Microsoft.WindowsAzure.MediaServices.Client.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20511.1437, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.205111437\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="amveAMSSample.css" />
+    <Content Include="amveSample.css" />
+    <Content Include="amveAMSSampleApp.js" />
+    <Content Include="amveSampleApp.js" />
+    <Content Include="amveAMSSampleSourceLoader.js" />
+    <Content Include="amveSampleSourceLoader.js" />
+    <Content Include="Global.asax" />
+    <Content Include="index.html" />
+    <Content Include="Plugins\Extensions\Editor\AMVESourceLoader.js" />
+    <Content Include="Plugins\Skins\amve\amve.min.css">
+      <DependentUpon>amve.css</DependentUpon>
+    </Content>
+    <Content Include="Plugins\Skins\amve\amve.css" />
+    <Content Include="Plugins\Skins\amve\fonts\amve.svg" />
+    <Content Include="techs\SmoothStreamingPlayer.xap" />
+    <Content Include="techs\StrobeMediaPlayback.2.0.swf" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Extensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Plugins\Skins\amve\fonts\amve.eot" />
+    <Content Include="Plugins\Skins\amve\fonts\amve.ttf" />
+    <Content Include="Plugins\Skins\amve\fonts\amve.woff" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\amvestaging - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\amvestaging - Web Deploy.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="azuremediaplayer.d.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Core\AMVECore.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Interfaces\IPropertyChangeEventSource.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Modules\AMVEClipData.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Modules\Box.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Modules\Common.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Interfaces\IEventSource.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Modules\KeyboardShortcutConfig.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Modules\ThumbnailData.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Modules\AMVEBottomControlBar.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Modules\AMVEMarkControlBar.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Modules\AMVEPlayerControlBar.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Modules\AMVEScrubber.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Modules\AMVESettingsDialog.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Modules\AMVESubmitDialog.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Modules\AMVETopControlBar.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Modules\AMVEUX.ts" />
+    <TypeScriptCompile Include="Plugins\Extensions\Editor\Modules\Tooltips.ts" />
+    <TypeScriptCompile Include="Utils\QueryStringParser.ts" />
+    <TypeScriptCompile Include="Utils\SourceLoader.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2150</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2050/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\MicrosoftAjax\AjaxMin.targets" />
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <JS Include="Plugins\Extensions\Editor\**\*.js" Exclude="Plugins\Extensions\Editor\AMVESourceLoader.js;Plugins\Extensions\Editor\**\*.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+      <CSS Include="Plugins\Skins\amve\**\*.css" Exclude="Plugins\Skins\amve\**\*.min.css" />
+    </ItemGroup>
+    <AjaxMin Switches="-global:jQuery,$" JsSourceFiles="@(JS)" JsCombinedFileName="Plugins\Extensions\Editor\amve.min.js" CssSourceFiles="@(CSS)" CssCombinedFileName="Plugins\Skins\amve\amve.min.css" />
+    <ItemGroup>
+      <MinFiles Include="Plugins\Extensions\Editor\amve.min.js;Plugins\Skins\amve\amve.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+      <CSSFonts Include="Plugins\Skins\amve\fonts\*.*" />
+    </ItemGroup>
+    <ItemGroup>
+      <Docs Include="../Documents/license.txt" />
+      <Docs Include="../Documents/Readme.pdf" />
+      <Docs Include="../Documents/Usage.pdf" />
+    </ItemGroup>
+    <Copy SourceFiles="@(MinFiles)" DestinationFolder="../AMVESample" />
+    <Copy SourceFiles="@(CSSFonts)" DestinationFolder="../AMVESample/fonts" />
+    <Copy SourceFiles="@(Docs)" DestinationFolder="../AMVESample" />
+  </Target>
+</Project>

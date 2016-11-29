@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />
+    <title>Azure Media Video Editor</title>
+
+    <!-- Begin External Libraries -->
+    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <!-- End External Libraries -->
+
+    <script src="//amp.azure.net/libs/amp/1.7.4/azuremediaplayer.min.js"></script>
+    <script src="Utils/QueryStringParser.js"></script>
+    <script src="Utils/SourceLoader.js"></script>
+    <script src="amveSampleSourceLoader.js"></script>
+
+    <!-- Begin External CSS -->
+    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <!-- End External CSS -->
+
+    <link rel="stylesheet" type="text/css" href="//amp.azure.net/libs/amp/1.7.4/skins/amp-default/azuremediaplayer.min.css" />
+    <link href="Plugins/Skins/amve/amve.css" rel="stylesheet" />
+    <link href="amveSample.css" rel="stylesheet" />
+</head>
+<body onload="initPlayer();">
+    <div tabindex="0" id="videoContainer">
+        <h2>Azure Media Video Editor</h2>
+        <div id="urlEntryContainer">
+            <h4>Select or Enter a URL:</h4>
+            <select id="urlList">
+                <option value="http://amssamples.streaming.mediaservices.windows.net/91492735-c523-432b-ba01-faba6c2206a2/AzureMediaServicesPromo.ism/manifest(format=mpd-time-csf)" selected>VOD</option>
+                <option value="http://b028.wpc.azureedge.net/80B028/Samples/a38e6323-95e9-4f1f-9b38-75eba91704e4/5f2ce531-d508-49fb-8152-647eba422aec.ism/manifest(format=mpd-time-csf)">Live</option>
+            </select>
+            &nbsp;or&nbsp;
+            <input id="urlEntryTxt" type="text" width="400" value="Url..." />
+            &nbsp;
+            <button id="urlEntrySubmitBtn">GO</button>
+            <hr />
+        </div>
+        <div id="amve">
+            <video id="vid1" class="azuremediaplayer amp-default-skin amp-big-play-centered" width="640" height="480">
+                <p class="amp-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video</p>
+            </video>
+            <div id="custommetadata">
+                <hr />
+                <label>Test1: </label>&nbsp;<input id="test1" type="text" value="Test 1" /><br>
+                <label>Test2: </label>&nbsp;<input id="test2" type="text" value="Test 2" /><br>
+                <label>Test3: </label>&nbsp;<input id="test3" type="text" value="Test 3" /><br>
+                <label>Test4: </label>&nbsp;<input id="test4" type="text" value="Test 4" />
+                <hr/>
+                <label>Color: </label><br/>
+                <input type="radio" name="colorchoice" value="red" checked> Red<br>
+                <input type="radio" name="colorchoice" value="blue"> Blue<br>
+                <input type="radio" name="colorchoice" value="green"> Green
+                <hr />
+                <label>Food: </label><br />
+                <input type="checkbox" name="foodchoices" value="breakfast"> Breakfast<br>
+                <input type="checkbox" name="foodchoices" value="lunch"> Lunch
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿html, body {
+    height:100%;
+    width:100%;
+}
+
+#urlEntryContainer {
+    display: none;
+}
+
+#amveContainer {
+    display: none;
+}
+
+#jobsDisplay {
+    display: none;
+}
+
+.jobFieldName {
+    width: 100px;
+    font-weight: bold;
+}
+
+.jobFieldValue {
+    margin-left: 5px;
+}
+
+#mainSpinner {
+    background: url(//amp.azure.net/libs/amp/1.7.2/skins/amp-default/icons/buffering-rainbow-bg.png);
+    margin: 10px auto;
+    width: 96px;
+    height: 96px;
+    display: block;
+}
+
+#mainSpinner:before {
+    content: url('//amp.azure.net/libs/amp/1.7.2/skins/amp-default/icons/buffering-rainbow.gif');
+}
+
+#jobsDisplaySpinner {
+    background: url(//amp.azure.net/libs/amp/1.7.2/skins/amp-default/icons/buffering-rainbow-bg.png);
+    margin: 10px auto;
+    width: 96px;
+    height: 96px;
+    display: none;
+}
+
+#jobsDisplaySpinner:before {
+    content: url('//amp.azure.net/libs/amp/1.7.2/skins/amp-default/icons/buffering-rainbow.gif');
+}

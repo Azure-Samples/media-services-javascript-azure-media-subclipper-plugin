@@ -1,0 +1,6 @@
+﻿#videoContainer {
+    display: none;
+    margin: auto;
+    min-height: 480px;
+    min-width: 625px;
+}
