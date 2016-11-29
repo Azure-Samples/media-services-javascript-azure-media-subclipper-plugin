@@ -1,7 +1,7 @@
 ---
 services: media-services
 platforms: javascript
-author: ianbe
+author: Ian N. Bennett (ianisms)
 ---
 
 # Media Services: Subclipper Plugin for Azure Media Player
