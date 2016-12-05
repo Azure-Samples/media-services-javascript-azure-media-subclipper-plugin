@@ -5,9 +5,16 @@ author: Ian N. Bennett (ianisms)
 ---
 
 # Media Services: Subclipper Plugin for Azure Media Player
+An Azure Media Player plugin that enables subclipping a live or on-demand video stream.
 
-# Introduction
-This is an Azure Media Player plugin that enables subclipping a live or on-demand video stream.
+## Information
+The Azure Media Player (AMP) subclipper plugin is a plugin that allows users to subclip a live or video-on-demand stream. Streams can be subclipped with frame-accuracy or group-of-photos (GOP) accuracy. The plugin outputs the mark-in and mark-out points in the stream that can then be consumed by the Azure Media Services subclipper API.
+
+### Preview of the Subclipper
+![Subclipper Sample](https://github.com/Azure-Samples/media-services-javascript-azure-media-subclipper-plugin/raw/master/Documents/subclipper.PNG)
+
+### Special Thanks
+Special thanks to [Ian N. Bennett](https://github.com/ianisms) for his help and contributions to this project.
 
 ## Getting Started
 
@@ -257,7 +264,7 @@ keyboadShortcutConfig.changeModeTrimShortcut = 'shift+t';
 
 There are a number of parameters that can be passed to AMVE via the plugin registration.  They are all passed via the plugin options parameter in the plugin registration like so:
 
-###### 8.1 AMVE Plugin Parameters – Passing through AMP Registration
+###### 8.1 AMVE Plugin Parameters Â– Passing through AMP Registration
 
 ```javascript
 plugins: {
