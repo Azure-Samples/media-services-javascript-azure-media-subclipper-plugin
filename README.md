@@ -13,6 +13,9 @@ The Azure Media Player (AMP) subclipper plugin is a plugin that allows users to 
 ### Preview of the Subclipper
 ![Subclipper Sample](https://github.com/Azure-Samples/media-services-javascript-azure-media-subclipper-plugin/raw/master/Documents/subclipper.PNG)
 
+### Public Deployment
+A public, hosted deployment of the subclipper is available at the [Azure Media Subclipper Plugin webpage](http://amve.azurewebsites.net/simple.html).
+
 ### Special Thanks
 Special thanks to [Ian N. Bennett](https://github.com/ianisms) for his help and contributions to this project.
 
@@ -288,6 +291,3 @@ The possible configuration parameters, some required some optional, are as follo
 The style of the editor, display and position of elements can be customized at will by overriding the applied CSS styles.  With this said, it should be noted that manipulating the CSS properties of the editor elements could cause issues in the function of the editor.
 
 As a guide the CSS class names and style rules generally follow the hierarchy of the components of the editor.  The best way to customize the editor is by looking at the rendered and styled DOM using your favorite HTML dev tools like those built into your favorite browser.
-
-# Public Deployment
-A public, hosted deployment of the subclipper is available at the [Azure Media Subclipper Plugin webpage](http://amve.azurewebsites.net/simple.html).
