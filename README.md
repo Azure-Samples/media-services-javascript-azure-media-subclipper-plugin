@@ -8,7 +8,7 @@ author: Ian N. Bennett (ianisms)
 An Azure Media Player plugin that enables subclipping a live or on-demand video stream.
 
 ## Information
-The Azure Media Player (AMP) subclipper plugin is a plugin that allows users to subclip a live or video-on-demand stream. Streams can be subclipped with frame-accuracy or group-of-photos (GOP) accuracy. The plugin outputs the mark-in and mark-out points in the stream that can then be consumed by the Azure Media Services subclipper API.
+The Azure Media Player (AMP) subclipper plugin is a plugin that allows users to subclip a live or video-on-demand stream. Streams can be subclipped with frame-accuracy or group-of-photos (GOP) accuracy. The plugin outputs the mark-in and mark-out points in the stream that can then be consumed by the Azure Media Services subclipper API. The functionality and usage of the subclipper is detailed in our [blog post](https://azure.microsoft.com/en-au/blog/azure-media-services-video-subclipper-open-source-release/).
 
 ### Preview of the Subclipper
 ![Subclipper Sample](https://github.com/Azure-Samples/media-services-javascript-azure-media-subclipper-plugin/raw/master/Documents/subclipper.PNG)
