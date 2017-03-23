@@ -1,16 +1,18 @@
-﻿/// <reference path='../Interfaces/IEventSource.ts' />
-/// <reference path='../Modules/Common.ts' />
-/// <reference path='../Modules/KeyboardShortcutConfig.ts' />
-/// <reference path='../Modules/Box.ts' />
-/// <reference path='../Modules/AMVETopControlBar.ts' />
-/// <reference path='../Modules/AMVEPlayerControlBar.ts' />
-/// <reference path='../Modules/AMVEMarkControlBar.ts' />
-/// <reference path='../Modules/AMVEScrubber.ts' />
-/// <reference path='../Modules/AMVEBottomControlBar.ts' />
-/// <reference path='../Modules/AMVESubmitDialog.ts' />
-/// <reference path='../Modules/AMVESettingsDialog.ts' />
-
-"use strict";
+﻿import { IEventSource } from "../Interfaces/IEventSource";
+import { EditorModes, AMVEFrameRates } from "../Modules/Common"
+import { KeyboardShortcutManager, KeyboardShortcutConfig } from "../Modules/KeyboardShortcutConfig"
+import { Box } from "../Modules/Box";
+import { AMVETopControlBar } from "../Modules/AMVETopControlBar"
+import { AMVEPlayerControlBar } from "../Modules/AMVEPlayerControlBar"
+import { AMVEMarkControlBar } from "../Modules/AMVEMarkControlBar";
+import { AMVEScrubber } from "../Modules/AMVEScrubber";
+import { AMVEBottomControlBar } from "../Modules/AMVEBottomControlBar";
+import { AMVESubmitDialog } from "../Modules/AMVESubmitDialog";
+import { AMVESettingsDialog } from "../Modules/AMVESettingsDialog";
+import { IPropertyChangeEventSource } from "../Interfaces/IPropertyChangeEventSource"
+import { AMVECore } from "../Core/AMVECore"
+import { ThumbnailData } from "../Modules/ThumbnailData";
+import { AMVEClipData } from "../Modules/AMVEClipData";
 
 module AMVE {
     /**
@@ -1160,9 +1162,7 @@ module AMVE {
 
                 var tnFreq = Math.round(that.checkClipDuration() / that.thumbnailCount);
 
-                getTn();
-
-                function getTn() {
+                const getTn = () => {
                     if (tnCount < that._thumbnailCount && lastTime <= endTime) {
                         that.player.currentTime(lastTime);
                         that.captureThumbnail(lastTime, function (thumbnail: ThumbnailData) {
@@ -1182,6 +1182,8 @@ module AMVE {
                         that.isThumbnailsGenerating = false;
                     }
                 }
+
+                getTn();
             }
         }
 
@@ -1427,4 +1429,6 @@ module AMVE {
             }
         }
     }
-} 
+}
+
+export = AMVE;

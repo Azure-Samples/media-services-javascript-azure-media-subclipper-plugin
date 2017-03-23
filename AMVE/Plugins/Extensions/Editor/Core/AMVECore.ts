@@ -1,30 +1,27 @@
-﻿/// <reference path='../../../../azuremediaplayer.d.ts' />
-/// <reference path='../Interfaces/IEventSource.ts' />
-/// <reference path='../Modules/Common.ts' />
-/// <reference path='../Modules/AMVEClipData.ts' />
-/// <reference path='../Modules/KeyboardShortcutConfig.ts' />
-/// <reference path='../Modules/ThumbnailData.ts' />
-/// <reference path='../Modules/AMVEUX.ts' />
+﻿/// <reference path='../../../../../typings/azuremediaplayer.d.ts' />
 
-module amp {
-    /**
-     * AMVE plugin instantiation
-     */
-    plugin('AMVE', function AMVEPlugin(options: Object) {
-        var _player: amp.Player = this;
-        var _amveCore: AMVE.AMVECore;
+import { IEventSource } from "../Interfaces/IEventSource";
+import { AMVEClipData } from "../Modules/AMVEClipData";
+import { KeyboardShortcutConfig } from "../Modules/KeyboardShortcutConfig"
+import { AMVEUX } from "../Modules/AMVEUX";
 
-        if (options && options['containerId']) {
-            _amveCore = new AMVE.AMVECore(_player, options);
-        }
-    });
-}
+/**
+ * AMVE plugin instantiation
+ */
+amp.plugin('AMVE', function AMVEPlugin(options: Object) {
+    var _player: amp.Player = this;
+    var _amveCore: AMVE.AMVECore;
+
+    if (options && options['containerId']) {
+        _amveCore = new AMVE.AMVECore(_player, options);
+    }
+});
 
 module AMVE {
-
     /**
      * Core logic for AMVE
      */
+
     export class AMVECore implements IEventSource {
         public player: amp.Player;
         public containerId: string;
@@ -91,3 +88,5 @@ module AMVE {
         }
     }
 }
+
+export = AMVE;

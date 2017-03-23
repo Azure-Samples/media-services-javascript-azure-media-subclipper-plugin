@@ -1,4 +1,4 @@
-﻿/// <reference path='../Modules/Common.ts' />
+﻿import { IEventSource } from "../Interfaces/IEventSource";
 
 module AMVE {
     /**
@@ -30,3 +30,5 @@ module AMVE {
         propertyChanged(property: string);
     }
 }
+
+export = AMVE;

@@ -1,6 +1,4 @@
-﻿"use strict";
-
-interface Array<T> {
+﻿interface Array<T> {
     findFirst(predicate: Function): T;
     findIndexOf(predicate: Function): number;
 }
@@ -61,4 +59,6 @@ module AMVE {
         ThirtyFPS,
         SixtyFPS
     }
-} 
+}
+
+export = AMVE;

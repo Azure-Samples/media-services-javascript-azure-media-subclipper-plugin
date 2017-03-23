@@ -1,8 +1,4 @@
-﻿/// <reference path='../Modules/Common.ts' />
-
-"use strict";
-
-module AMVE {
+﻿module AMVE {
     /**
      * Class for holding generated thumbnail properties
      */
@@ -59,3 +55,5 @@ module AMVE {
         }
     }
 }
+
+export = AMVE;

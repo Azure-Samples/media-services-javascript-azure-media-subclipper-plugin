@@ -1,8 +1,4 @@
-﻿/// <reference path='../Modules/Common.ts' />
-
-"use strict";
-
-module AMVE {
+﻿module AMVE {
     /**
      * Used for managing tooltips
      */
@@ -13,4 +9,6 @@ module AMVE {
         public static ZoomIn: string = "Zoom Scrubber In";
         public static ZoomOut: string = "Zoom Scrubber Out";
     }
-} 
+}
+
+export = AMVE;

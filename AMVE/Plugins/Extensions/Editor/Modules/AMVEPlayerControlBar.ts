@@ -1,7 +1,4 @@
-﻿/// <reference path='../Modules/Common.ts' />
-/// <reference path='../Modules/AMVEUX.ts' />
-
-"use strict";
+﻿import { AMVEUX } from "../Modules/AMVEUX";
 
 module AMVE {
     /**
@@ -470,4 +467,6 @@ module AMVE {
             }
         }
     }
-} 
+}
+
+export = AMVE;

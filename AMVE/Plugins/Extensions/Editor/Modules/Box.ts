@@ -1,8 +1,4 @@
-﻿/// <reference path='../Modules/Common.ts' />
-
-"use strict";
-
-module AMVE {
+﻿module AMVE {
     /**
      * Internal class used for positioning elements
      */
@@ -38,3 +34,5 @@ module AMVE {
         }
     }
 }
+
+export = AMVE;
