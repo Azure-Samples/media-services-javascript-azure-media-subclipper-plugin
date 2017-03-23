@@ -15,6 +15,17 @@ amp.plugin('AMVE', function AMVEPlugin(options: Object) {
     if (options && options['containerId']) {
         _amveCore = new AMVE.AMVECore(_player, options);
     }
+    // Custom expose amve fully temporary
+    this._amveCore = _amveCore;
+    // Expose public API
+    this.videoEditor = {
+        setMarkIn: (value: number) => {
+            this._amveCore._amveUX.clipData.markInPT = value;
+        },
+        setMarkOut: (value: number) => {
+            this._amveCore._amveUX.clipData.markOutPT = value;
+        }
+    }
 });
 
 module AMVE {
