@@ -14,15 +14,15 @@ module AMVE {
         private _submitDialogThumbnailsLeftArrow: HTMLElement;
         private _submitDialogThumbnails: Array<HTMLImageElement>;
         private _submitDialogThumbnailsRightArrow: HTMLElement;
-        private _submitDialogMiddle: HTMLElement;
+        // private _submitDialogMiddle: HTMLElement;
         private _submitDialogBottom: HTMLElement;
         private _leftColTop: HTMLElement;
         private _rightColTop: HTMLElement;
         private _submitDialogTitle: HTMLElement;
         private _submitDialogBottomMargin: HTMLElement;
         private _submitDialogCloseBtn: HTMLElement;
-        private _submitDialogEntryTitle: HTMLInputElement;
-        private _submitDialogDescription: HTMLTextAreaElement;
+        // private _submitDialogEntryTitle: HTMLInputElement;
+        // private _submitDialogDescription: HTMLTextAreaElement;
         private _submitDialogCustom: HTMLElement;
         private _submitDialogCancelBtn: HTMLElement;
         private _submitDialogSubmitBtn: HTMLElement;
@@ -54,9 +54,11 @@ module AMVE {
                 this._amveUX.createElement(['amve-submitdlg-entry-thumbnails']);
             this._submitDialogContent.appendChild(this._submitDialogThumbnailsContainer);
 
+            /*
             this._submitDialogMiddle =
                 this._amveUX.createElement(['amve-submitdlg-entry-middle']);
             this._submitDialogContent.appendChild(this._submitDialogMiddle);
+            */
 
             this._submitDialogBottom =
                 this._amveUX.createElement(['amve-submitdlg-entry-bottom']);
@@ -114,6 +116,7 @@ module AMVE {
                 this._amveUX.createElement(['amve-btn-control', 'amve-chevron-right', 'amve-thumbnails-rightarrow', 'amve-btn-disabled']);
             this._submitDialogThumbnailsContainer.appendChild(this._submitDialogThumbnailsRightArrow);
 
+            /*
             this._submitDialogEntryTitle =
                 <HTMLInputElement>this._amveUX.createElement(['amve-submitdlg-entry-title'], 'input');
             this._submitDialogEntryTitle.setAttribute('type', 'text');
@@ -138,10 +141,12 @@ module AMVE {
             };
 
             this._submitDialogDescription.addEventListener('focus', submitDialogDescriptionFirstFocus);
+            
 
             this._submitDialogCustom =
                 this._amveUX.createElement(['amve-submitdlg-entry-custom']);
             this._submitDialogMiddle.appendChild(this._submitDialogCustom);
+            */
 
             this._submitDialogBottomMargin =
                 this._amveUX.createElement(['amve-margin']);
@@ -195,8 +200,8 @@ module AMVE {
              * Submits the clip
              */
             this._submitDialogSubmitBtn.addEventListener('click', function () {
-                that._amveUX.clipData.title = that._submitDialogEntryTitle.value;
-                that._amveUX.clipData.description = that._submitDialogDescription.value;
+                // that._amveUX.clipData.title = that._submitDialogEntryTitle.value;
+                // that._amveUX.clipData.description = that._submitDialogDescription.value;
                 if (that._amveUX.thumbnails && that._amveUX.thumbnails.length > 0 && that._selectedThumbnailIndex < that._amveUX.thumbnails.length) {
                     that._amveUX.clipData.thumbnail = that._amveUX.thumbnails[that._selectedThumbnailIndex];
                 }
@@ -314,7 +319,7 @@ module AMVE {
          * Resizes the submit dialog
          */
         public resize(): void {
-            var top = ((this._amveUX.clientHeight - this.clientHeight) / 2) + 100;
+            var top = ((this._amveUX.clientHeight - this.clientHeight) / 2) + 30; // EK Custom fix
             this._submitDialogContent.style.top = top + 'px';
         }
 
@@ -331,7 +336,7 @@ module AMVE {
                 }
 
                 this._submitDialogCustom.appendChild(container);
-                this._submitDialogCustom.style.display = 'block';
+                this._submitDialogCustom.style.display = 'none';
             }
         }
 

@@ -25,7 +25,7 @@ module AMVE {
         private _frameRate: AMVEFrameRates = AMVEFrameRates.ThirtyFPS;
         private _container: HTMLElement;
         private _playerContainer: HTMLElement;
-        private _topControlBar: AMVETopControlBar;
+        // private _topControlBar: AMVETopControlBar;
         private _bottom: HTMLElement;
         private _playerControlBar: AMVEPlayerControlBar;
         private _markControlBar: AMVEMarkControlBar;
@@ -80,7 +80,7 @@ module AMVE {
                         this._thumbnailGeneratorCanvas.style.display = 'none';
                         this._thumbnailGeneratorContainer.appendChild(this._thumbnailGeneratorCanvas);
 
-                        this._topControlBar = new AMVETopControlBar(this);
+                        // this._topControlBar = new AMVETopControlBar(this);
 
                         if (this.player.playerElement().parentElement) {
                             this._playerContainer = this.createElement(['amve-player-container']);
@@ -309,9 +309,9 @@ module AMVE {
          * Called when the page is resized to reposition the UX elements
          */
         private resize(): void {
-            this.resizePlayer();
-            this._submitDlg.resize();
-            this._settingsDlg.resize();
+            // this.resizePlayer();
+            // this._submitDlg.resize();
+            // this._settingsDlg.resize();
         }
 
         /**
@@ -326,7 +326,7 @@ module AMVE {
                     offset.right - 2;
 
                 var height = this._container.clientHeight -
-                    this._topControlBar.clientHeight -
+                    // this._topControlBar.clientHeight -
                     this._bottomControlBar.clientHeight -
                     offset.top -
                     offset.bottom;
@@ -858,7 +858,7 @@ module AMVE {
                         that._playerCoverImage.src = thumbnail.dataUrl;
                         that._playerCoverImage.width = playerWidth;
                         that._playerCoverImage.height = playerHeight;
-                        that._playerCoverImage.style.top = that._topControlBar.clientHeight + 'px';
+                        // that._playerCoverImage.style.top = that._topControlBar.clientHeight + 'px';
                         that._playerCoverImage.style.display = 'block';
                     }
                     that._submitToggle = false;

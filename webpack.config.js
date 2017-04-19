@@ -6,7 +6,7 @@ module.exports = {
     entry: "./AMVE/Plugins/Extensions/Editor/Core/AMVECore.ts",
     output: {
         path: __dirname + "/dist",
-        filename: "amve.js",
+        filename: "amve.min.js",
         library: "AMVE",
         libraryTarget: "var"
     },
@@ -35,6 +35,7 @@ module.exports = {
         new ExtractTextPlugin("./amve.css"),
         new webpack.LoaderOptionsPlugin({
             debug: true
-        })
+        }),
+        new webpack.optimize.UglifyJsPlugin({minimize: true})
     ]
 };
