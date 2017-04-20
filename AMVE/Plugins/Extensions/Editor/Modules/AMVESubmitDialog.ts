@@ -74,7 +74,7 @@ module AMVE {
 
             this._submitDialogTitle =
                 this._amveUX.createElement(['amve-submitdlg-title']);
-            this._submitDialogTitle.innerHTML = 'export media'
+            this._submitDialogTitle.innerHTML = 'select poster'
             this._leftColTop.appendChild(this._submitDialogTitle);
 
             this._submitDialogCloseBtn =
@@ -159,7 +159,7 @@ module AMVE {
 
             this._submitDialogSubmitBtn =
                 this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-submit-btn']);
-            this._submitDialogSubmitBtn.innerHTML = 'submit';
+            this._submitDialogSubmitBtn.innerHTML = 'confirm';
             this._submitDialogBottom.appendChild(this._submitDialogSubmitBtn);
 
             /**
