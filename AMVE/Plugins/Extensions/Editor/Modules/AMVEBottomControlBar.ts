@@ -46,9 +46,9 @@ module AMVE {
                 this._amveUX.createElement(['amve-bottom-controlbar-top']);
             this._controlBarElement.appendChild(this._controlBarTopElement);
 
-            this._leftCol =
-                this._amveUX.createElement(['amve-left-column']);
-            this._controlBarTopElement.appendChild(this._leftCol);
+            // this._leftCol =
+            //     this._amveUX.createElement(['amve-left-column']);
+            // this._controlBarTopElement.appendChild(this._leftCol);
 
             this._centerCol =
                 this._amveUX.createElement(['amve-center-column']);
@@ -70,10 +70,10 @@ module AMVE {
                 this._amveUX.createElement(['amve-right-column']);
             this._controlBarTopElement.appendChild(this._rightCol);
 
-            this._resetBtn =
-            this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-reset-btn']);
-            this._resetBtn.innerHTML = 'reset';
-            this._leftCol.appendChild(this._resetBtn);
+            // this._resetBtn =
+            // this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-reset-btn']);
+            // this._resetBtn.innerHTML = 'reset';
+            // this._leftCol.appendChild(this._resetBtn);
 
             this._exportBtn =
                 this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-btn-disabled', 'amve-export-btn']);
@@ -249,9 +249,9 @@ module AMVE {
             /**
              * See AMVEUX.reset
              */
-            this._resetBtn.addEventListener('click', function () {
-                that._amveUX.reset();
-            });
+            // this._resetBtn.addEventListener('click', function () {
+            //     that._amveUX.reset();
+            // });
 
             /**
              * Sets the player time to the markIn value when the markIn display is clicked
