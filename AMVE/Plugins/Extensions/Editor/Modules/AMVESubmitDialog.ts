@@ -92,6 +92,11 @@ module AMVE {
                 this._submitDialogThumbnailsContainer.appendChild(_thumbnail);
                 this._submitDialogThumbnails.push(_thumbnail);
 
+                if (i === 0){
+                    _thumbnail.classList.add('amve-selected');
+                    that._selectedThumbnailIndex = 0;
+                }
+
                 /**
                  * Selects the thumbnail and deselects the others if appropriate
                  */
@@ -214,11 +219,11 @@ module AMVE {
              */
             this._amveUX.addPropertyChangedListener('isThumbnailsGenerating', function () {
                 if (that._amveUX.isThumbnailsGenerating) {
-                    resetThumbnails();
+                    //resetThumbnails();
                     that.resize();
                 } else {
                     that._currentThumbnailIndex = 0;
-                    resetThumbnails();
+                    // resetThumbnails();
                     renderThumbnails();
                     that.resize();
                 }
@@ -235,8 +240,10 @@ module AMVE {
 
                 if (that._submitDialogThumbnails) {
                     that._submitDialogThumbnails.forEach(function (tn: HTMLImageElement, index: number, thumnails: Array<HTMLImageElement>) {
-                        tn.style.display = 'none';
-                        tn.classList.remove('amve-selected');
+                        if (tn !== that._submitDialogThumbnails[0]) {
+                            tn.style.display = 'none';
+                            tn.classList.remove('amve-selected');
+                        }
                     });
                 }
             }
