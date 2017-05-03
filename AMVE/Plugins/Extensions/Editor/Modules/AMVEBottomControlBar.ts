@@ -77,7 +77,7 @@ module AMVE {
 
             this._exportBtn =
                 this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-btn-disabled', 'amve-export-btn']);
-            this._exportBtn.innerHTML = 'set poster';
+            this._exportBtn.innerHTML = 'thumbnail';
             this._rightCol.appendChild(this._exportBtn);
 
             this._clipLengthDisplay =
