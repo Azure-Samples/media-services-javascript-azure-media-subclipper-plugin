@@ -110,7 +110,7 @@ module AMVE {
 
             this._setMarkInBtn =
                 this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-setmarkin-btn']);
-            this._setMarkInBtn.innerHTML = 'set in';
+            this._setMarkInBtn.innerHTML = 'Set start';
             this._markInDisplayContainer.appendChild(this._setMarkInBtn);
 
             this._markInDisplay =
@@ -131,7 +131,7 @@ module AMVE {
 
             this._setMarkOutBtn =
                 this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-setmarkout-btn']);
-            this._setMarkOutBtn.innerHTML = 'set out';
+            this._setMarkOutBtn.innerHTML = 'Set end';
             this._markOutDisplayContainer.appendChild(this._setMarkOutBtn);
 
             this._markOutDisplay =
