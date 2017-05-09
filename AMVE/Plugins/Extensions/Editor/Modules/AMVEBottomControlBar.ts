@@ -35,6 +35,9 @@ module AMVE {
         private _markOutDisplayContainer: HTMLElement;
         private _markOutDisplay: HTMLElement;
         private _markOutRightArrow: HTMLElement;
+        private _bottomControlBarContainer: HTMLElement;
+        private _setMarksContainer: HTMLElement;
+        private _setThumbnailsContainer: HTMLElement;
 
         constructor(amveUX: AMVEUX) {
             var that = this;
@@ -52,9 +55,21 @@ module AMVE {
             //     this._amveUX.createElement(['amve-left-column']);
             // this._controlBarTopElement.appendChild(this._leftCol);
 
+            this._bottomControlBarContainer =
+                this._amveUX.createElement(['amve-bottom-control-bar-container']);
+            this._controlBarTopElement.appendChild(this._bottomControlBarContainer);
+
+            this._setMarksContainer =
+                this._amveUX.createElement(['amve-float-left']);
+            this._bottomControlBarContainer.appendChild(this._setMarksContainer);
+
+            this._setThumbnailsContainer =
+                this._amveUX.createElement(['amve-float-right']);
+            this._bottomControlBarContainer.appendChild(this._setThumbnailsContainer);
+
             this._centerCol =
-                this._amveUX.createElement(['amve-center-column']);
-            this._controlBarTopElement.appendChild(this._centerCol);
+                this._amveUX.createElement(['amve-center-column', 'no-margin']);
+            this._setMarksContainer.appendChild(this._centerCol);
 
             this._centerColLeft =
                 this._amveUX.createElement(['amve-center-column-left']);
@@ -70,7 +85,7 @@ module AMVE {
 
             this._rightCol =
                 this._amveUX.createElement(['amve-right-column']);
-            this._controlBarTopElement.appendChild(this._rightCol);
+            this._setThumbnailsContainer.appendChild(this._rightCol);
 
             // this._resetBtn =
             // this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-reset-btn']);
