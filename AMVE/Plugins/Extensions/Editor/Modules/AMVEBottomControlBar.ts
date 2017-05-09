@@ -17,7 +17,9 @@ module AMVE {
         private _centerColCenter: HTMLElement;
         private _centerColRight: HTMLElement;
         private _resetBtn: HTMLElement;
+        private _thumbnailBtnContainer: HTMLElement;
         private _exportBtn: HTMLElement;
+        private _exportIcon: HTMLElement;
         private _setMarkInBtn: HTMLElement;
         private _setMarkOutBtn: HTMLElement;
         private _clipLengthDisplay: HTMLElement;
@@ -75,10 +77,19 @@ module AMVE {
             // this._resetBtn.innerHTML = 'reset';
             // this._leftCol.appendChild(this._resetBtn);
 
+            this._thumbnailBtnContainer =
+                this._amveUX.createElement(['amve-btn', 'amve-btn-parent']);
+            this._rightCol.appendChild(this._thumbnailBtnContainer);
+
             this._exportBtn =
-                this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-btn-disabled', 'amve-export-btn']);
+                this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-btn-disabled', 'amve-export-btn', 'amve-btn-child']);
             this._exportBtn.innerHTML = 'Thumbnails';
-            this._rightCol.appendChild(this._exportBtn);
+            this._thumbnailBtnContainer.appendChild(this._exportBtn);
+
+            this._exportIcon =
+                this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-export-icon', 'amve-btn-child']);
+            this._exportBtn.innerHTML = 'Thumbnails';
+            this._thumbnailBtnContainer.appendChild(this._exportIcon);
 
             this._clipLengthDisplay =
                 this._amveUX.createElement(['amve-cliplength-display']);
