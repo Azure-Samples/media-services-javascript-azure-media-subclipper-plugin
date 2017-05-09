@@ -38,6 +38,10 @@ module AMVE {
         private _bottomControlBarContainer: HTMLElement;
         private _setMarksContainer: HTMLElement;
         private _setThumbnailsContainer: HTMLElement;
+        private _setMarkInBtnContainer:HTMLElement;
+        private _setMarkInIcon:HTMLElement;
+        private _setMarkOutBtnContainer:HTMLElement;
+        private _setMarkOutIcon:HTMLElement;
 
         constructor(amveUX: AMVEUX) {
             var that = this;
@@ -103,7 +107,6 @@ module AMVE {
 
             this._exportIcon =
                 this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-export-icon', 'amve-btn-child']);
-            this._exportBtn.innerHTML = 'Thumbnails';
             this._thumbnailBtnContainer.appendChild(this._exportIcon);
 
             this._clipLengthDisplay =
@@ -134,10 +137,18 @@ module AMVE {
                 this._amveUX.createElement(['amve-markin-display-container']);
             this._markInControls.appendChild(this._markInDisplayContainer);
 
+            this._setMarkInBtnContainer =
+                this._amveUX.createElement(['amve-btn', 'amve-btn-parent']);
+            this._markInDisplayContainer.appendChild(this._setMarkInBtnContainer);
+
             this._setMarkInBtn =
-                this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-setmarkin-btn']);
+                this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-setmarkin-btn', 'amve-btn-child']);
             this._setMarkInBtn.innerHTML = 'Set start';
-            this._markInDisplayContainer.appendChild(this._setMarkInBtn);
+            this._setMarkInBtnContainer.appendChild(this._setMarkInBtn);
+
+            this._setMarkInIcon =
+                this._amveUX.createElement(['amve-btn', 'amve-setmarkin-icon', 'amve-btn-child']);
+            this._setMarkInBtnContainer.appendChild(this._setMarkInIcon);
 
             this._markInDisplay =
                 this._amveUX.createElement(['amve-markin-display']);
@@ -155,10 +166,18 @@ module AMVE {
                 this._amveUX.createElement(['amve-markout-display-container']);
             this._markOutControls.appendChild(this._markOutDisplayContainer);
 
+            this._setMarkOutBtnContainer =
+                this._amveUX.createElement(['amve-btn', 'amve-btn-parent']);
+            this._markOutDisplayContainer.appendChild(this._setMarkOutBtnContainer);
+
             this._setMarkOutBtn =
-                this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-setmarkout-btn']);
+                this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-setmarkout-btn', 'amve-btn-child']);
             this._setMarkOutBtn.innerHTML = 'Set end';
-            this._markOutDisplayContainer.appendChild(this._setMarkOutBtn);
+            this._setMarkOutBtnContainer.appendChild(this._setMarkOutBtn);
+
+            this._setMarkOutIcon =
+                this._amveUX.createElement(['amve-btn', 'amve-setmarkout-icon', 'amve-btn-child']);
+            this._setMarkOutBtnContainer.appendChild(this._setMarkOutIcon);
 
             this._markOutDisplay =
                 this._amveUX.createElement(['amve-markout-display']);
