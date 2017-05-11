@@ -819,21 +819,21 @@
     animation-duration: .4s
 }
 
-@-webkit-keyframes amve-modal-animatetop {
+@-webkit-keyframes "amve-modal-animatetop" {
     from {
-        opacity: 0
+        opacity: 0;
     }
     to {
-        opacity: 1
+        opacity: 1;
     }
 }
 
-@keyframes amve-modal-animatetop {
+@keyframes "amve-modal-animatetop" {
     from {
-        opacity: 0
+        opacity: 0;
     }
     to {
-        opacity: 1
+        opacity: 1;
     }
 }
 
@@ -1132,55 +1132,51 @@
     left: 0
 }
 
-/* Modifications */
-
-
 .amve-fullscreen-btn:before {
     font-family: 'azuremediaplayer';
-    content: "\E607 ";
+    content: "\E607 "
 }
 
 .amve-right-column-elements {
     display: flex;
     justify-content: flex-end;
-    width: 50px
+    width: 50px;
 }
 
 .amve-right-column-elements .amve-right-column-element {
-    margin: 0 5px;
+    margin: 0 5px
 }
 
 .amve-btn-parent {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end
 }
 
 .amve-btn-parent .amve-btn-child {
     justify-content: space-between;
-    vertical-align: middle;
+    vertical-align: middle
 }
 
 .amve-bottom-control-bar-container {
-    display: block;
-    width: 100%;
-    white-space: nowrap;
-    position: relative;
+    display: flex;
+    width: 100%
 }
 
-.amve-float-left {
-    float: left;
+.amve-set-marks {
+    order: 1
 }
 
-.amve-float-right {
-    float: right;
+.amve-set-thumbnail {
+    margin-left: auto;
+    order: 2;
 }
 
 .amve-no-margin {
-    margin: 0px !important;
+    margin: 0px !important
 }
 
 .amve-bottom-label {
     left: -120px;
     background: rgba(98, 98, 98, 0) !important;
-    font-size: 14px;
+    font-size: 14px
 }

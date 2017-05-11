@@ -64,11 +64,11 @@ module AMVE {
             this._controlBarTopElement.appendChild(this._bottomControlBarContainer);
 
             this._setMarksContainer =
-                this._amveUX.createElement(['amve-float-left']);
+                this._amveUX.createElement(['amve-set-marks']);
             this._bottomControlBarContainer.appendChild(this._setMarksContainer);
 
             this._setThumbnailsContainer =
-                this._amveUX.createElement(['amve-float-right']);
+                this._amveUX.createElement(['amve-set-thumbnail']);
             this._bottomControlBarContainer.appendChild(this._setThumbnailsContainer);
 
             this._centerCol =
