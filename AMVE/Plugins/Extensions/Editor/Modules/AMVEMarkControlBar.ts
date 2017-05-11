@@ -8,6 +8,7 @@ module AMVE {
     export class AMVEMarkControlBar {
         private _amveUX: AMVEUX;
         private _markControlElement: HTMLElement;
+        private _markControlElementLabel: HTMLElement;
         private _markFillElement: HTMLElement;
         private _markInElement: HTMLElement;
         private _markOutElement: HTMLElement;
@@ -29,6 +30,11 @@ module AMVE {
             this._markControlElement =
                 this._amveUX.createElement(['amve-mark-controlbar']);
             this._amveUX.appendBottomChild(this._markControlElement);
+
+            this._markControlElementLabel =
+                this._amveUX.createElement(['amve-mark-controlbar', 'bottom-label']);
+            this._markControlElementLabel.innerHTML = 'Clip';
+            this._markControlElement.appendChild(this._markControlElementLabel);
 
             this._markFillElement =
                 this._amveUX.createElement(['amve-mark-fill']);
