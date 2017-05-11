@@ -1159,7 +1159,8 @@
 
 .amve-bottom-control-bar-container {
     display: flex;
-    width: 100%
+    width: 100%;
+    align-items: center
 }
 
 .amve-set-marks {
@@ -1179,4 +1180,47 @@
     left: -120px;
     background: rgba(98, 98, 98, 0) !important;
     font-size: 14px
+}
+
+.amve-marks-container {
+    display: flex;
+    flex-direction: row
+}
+
+.amve-mark-in-setup {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.amve-mark-out-setup {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.amve-time-display {
+    order: 1;
+    margin: auto
+}
+
+.amve-mark-row {
+    order: 2;
+    display: flex;
+    flex-direction: row
+}
+
+.amve-mark-left-arrow {
+    order: 1
+}
+
+.amve-mark-label {
+    order: 2;
+    text-align: justify;
+    white-space: nowrap
+}
+
+
+.amve-mark-right-arrow {
+    order: 3
 }

@@ -42,6 +42,20 @@ module AMVE {
         private _setMarkInIcon:HTMLElement;
         private _setMarkOutBtnContainer:HTMLElement;
         private _setMarkOutIcon:HTMLElement;
+        private _amveMarksSetup:HTMLElement;
+        private _amveMarkInSetup:HTMLElement;
+        private _amveMarkInTimeDisplay:HTMLElement;
+        private _amveMarkInRow:HTMLElement;
+        private _amveMarkInLeftArrow:HTMLElement;
+        private _amveMarkInLabel:HTMLElement;
+        private _amveMarkInRightArrow:HTMLElement;
+        private _amveMarkOutSetup:HTMLElement;
+        private _amveMarkOutTimeDisplay:HTMLElement;
+        private _amveMarkOutRow:HTMLElement;
+        private _amveMarkOutLeftArrow:HTMLElement;
+        private _amveMarkOutLabel:HTMLElement;
+        private _amveMarkOutRightArrow:HTMLElement;
+        
 
         constructor(amveUX: AMVEUX) {
             var that = this;
@@ -113,6 +127,61 @@ module AMVE {
             //     this._amveUX.createElement(['amve-cliplength-display']);
             // this._centerColCenter.appendChild(this._clipLengthDisplay);
 
+            this._amveMarksSetup =
+                this._amveUX.createElement(['amve-marks-container']);
+            this._centerColLeft.appendChild(this._amveMarksSetup);
+
+            this._amveMarkInSetup =
+                this._amveUX.createElement(['amve-mark-in-setup']);
+            this._amveMarksSetup.appendChild(this._amveMarkInSetup);
+
+            this._amveMarkInTimeDisplay =
+                this._amveUX.createElement(['amve-time-display']);
+            this._amveMarkInSetup.appendChild(this._amveMarkInTimeDisplay);
+
+            this._amveMarkInRow =
+                this._amveUX.createElement(['amve-mark-row']);
+            this._amveMarkInSetup.appendChild(this._amveMarkInRow);
+
+            this._amveMarkInLeftArrow =
+                this._amveUX.createElement(['amve-mark-left-arrow']);
+            this._amveMarkInRow.appendChild(this._amveMarkInLeftArrow);
+
+            this._amveMarkInLabel =
+                this._amveUX.createElement(['amve-mark-label']);
+            this._amveMarkInRow.appendChild(this._amveMarkInLabel);
+
+            this._amveMarkInRightArrow =
+                this._amveUX.createElement(['amve-mark-right-arrow']);
+            this._amveMarkInRow.appendChild(this._amveMarkInRightArrow);
+
+            this._amveMarkOutSetup =
+                this._amveUX.createElement(['amve-mark-out-setup']);
+            this._amveMarksSetup.appendChild(this._amveMarkOutSetup);
+
+            this._amveMarkOutTimeDisplay =
+                this._amveUX.createElement(['amve-time-display']);
+            this._amveMarkOutSetup.appendChild(this._amveMarkOutTimeDisplay);
+
+            this._amveMarkOutRow =
+                this._amveUX.createElement(['amve-mark-row']);
+            this._amveMarkOutSetup.appendChild(this._amveMarkOutRow);
+
+            this._amveMarkOutLeftArrow =
+                this._amveUX.createElement(['amve-mark-left-arrow']);
+            this._amveMarkOutRow.appendChild(this._amveMarkOutLeftArrow);
+
+            this._amveMarkOutLabel =
+                this._amveUX.createElement(['amve-mark-label']);
+            this._amveMarkOutRow.appendChild(this._amveMarkOutLabel);
+
+            this._amveMarkOutRightArrow =
+                this._amveUX.createElement(['amve-mark-right-arrow']);
+            this._amveMarkOutRow.appendChild(this._amveMarkOutRightArrow);
+
+
+
+
             this._markInControlsContainer =
                 this._amveUX.createElement(['amve-markin-controls-container']);
             this._centerColLeft.appendChild(this._markInControlsContainer);
@@ -131,7 +200,8 @@ module AMVE {
 
             this._markInLeftArrow =
                 this._amveUX.createElement(['amve-btn-control', 'amve-chevron-left', 'amve-markin-leftarrow']);
-            this._markInControls.appendChild(this._markInLeftArrow);
+            // this._markInControls.appendChild(this._markInLeftArrow);
+            this._amveMarkInLeftArrow.appendChild(this._markInLeftArrow);
 
             this._markInDisplayContainer =
                 this._amveUX.createElement(['amve-markin-display-container']);
@@ -139,7 +209,8 @@ module AMVE {
 
             this._setMarkInBtnContainer =
                 this._amveUX.createElement(['amve-btn', 'amve-btn-parent']);
-            this._markInDisplayContainer.appendChild(this._setMarkInBtnContainer);
+            // this._markInDisplayContainer.appendChild(this._setMarkInBtnContainer);
+            this._amveMarkInLabel.appendChild(this._setMarkInBtnContainer);
 
             this._setMarkInBtn =
                 this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-setmarkin-btn', 'amve-btn-child']);
@@ -152,15 +223,19 @@ module AMVE {
 
             this._markInDisplay =
                 this._amveUX.createElement(['amve-markin-display']);
-            this._markInDisplayContainer.appendChild(this._markInDisplay);
+            
+            // this._markInDisplayContainer.appendChild(this._markInDisplay);
+            this._amveMarkInTimeDisplay.appendChild(this._markInDisplay);
 
             this._markInRightArrow =
                 this._amveUX.createElement(['amve-btn-control', 'amve-chevron-right', 'amve-markin-rightarrow']);
-            this._markInControls.appendChild(this._markInRightArrow);
+            // this._markInControls.appendChild(this._markInRightArrow);
+            this._amveMarkInRightArrow.appendChild(this._markInRightArrow);
 
             this._markOutLeftArrow =
                 this._amveUX.createElement(['amve-btn-control', 'amve-chevron-left', 'amve-markout-leftarrow']);
-            this._markOutControls.appendChild(this._markOutLeftArrow);
+            // this._markOutControls.appendChild(this._markOutLeftArrow);
+            this._amveMarkOutLeftArrow.appendChild(this._markOutLeftArrow);
 
             this._markOutDisplayContainer =
                 this._amveUX.createElement(['amve-markout-display-container']);
@@ -168,7 +243,8 @@ module AMVE {
 
             this._setMarkOutBtnContainer =
                 this._amveUX.createElement(['amve-btn', 'amve-btn-parent']);
-            this._markOutDisplayContainer.appendChild(this._setMarkOutBtnContainer);
+            // this._markOutDisplayContainer.appendChild(this._setMarkOutBtnContainer);
+            this._amveMarkOutLabel.appendChild(this._setMarkOutBtnContainer);
 
             this._setMarkOutBtn =
                 this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-setmarkout-btn', 'amve-btn-child']);
@@ -181,11 +257,13 @@ module AMVE {
 
             this._markOutDisplay =
                 this._amveUX.createElement(['amve-markout-display']);
-            this._markOutDisplayContainer.appendChild(this._markOutDisplay);
+            // this._markOutDisplayContainer.appendChild(this._markOutDisplay);
+            this._amveMarkOutTimeDisplay.appendChild(this._markOutDisplay);
 
             this._markOutRightArrow =
                 this._amveUX.createElement(['amve-btn-control', 'amve-chevron-right', 'amve-markout-rightarrow']);
-            this._markOutControls.appendChild(this._markOutRightArrow);
+            // this._markOutControls.appendChild(this._markOutRightArrow);
+            this._amveMarkOutRightArrow.appendChild(this._markOutRightArrow);
 
             this._amveUX.addPropertyChangedListener('mode', function () {
                 switch (that._amveUX.mode) {
