@@ -72,7 +72,7 @@ module AMVE {
             this._bottomControlBarContainer.appendChild(this._setThumbnailsContainer);
 
             this._centerCol =
-                this._amveUX.createElement(['amve-center-column', 'no-margin']);
+                this._amveUX.createElement(['amve-center-column', 'amve-no-margin']);
             this._setMarksContainer.appendChild(this._centerCol);
 
             this._centerColLeft =
