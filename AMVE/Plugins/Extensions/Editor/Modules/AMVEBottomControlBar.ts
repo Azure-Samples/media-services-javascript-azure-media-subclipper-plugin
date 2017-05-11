@@ -109,9 +109,9 @@ module AMVE {
                 this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-export-icon', 'amve-btn-child']);
             this._thumbnailBtnContainer.appendChild(this._exportIcon);
 
-            this._clipLengthDisplay =
-                this._amveUX.createElement(['amve-cliplength-display']);
-            this._centerColCenter.appendChild(this._clipLengthDisplay);
+            // this._clipLengthDisplay =
+            //     this._amveUX.createElement(['amve-cliplength-display']);
+            // this._centerColCenter.appendChild(this._clipLengthDisplay);
 
             this._markInControlsContainer =
                 this._amveUX.createElement(['amve-markin-controls-container']);
@@ -235,11 +235,11 @@ module AMVE {
              */
             function checkMark() {
                 if (that._amveUX.clipData.markInPT >= 0 && (that._amveUX.mode == EditorModes.Trim || that._amveUX.clipData.markOutPT > 0)) {
-                    that._clipLengthDisplay.innerHTML = that._amveUX.formatTimeWords(that._amveUX.checkClipDuration());
-                    that._clipLengthDisplay.style.display = 'block';
+                    // that._clipLengthDisplay.innerHTML = that._amveUX.formatTimeWords(that._amveUX.checkClipDuration());
+                    // that._clipLengthDisplay.style.display = 'block';
                     that._exportBtn.classList.remove('amve-btn-disabled');
                 } else {
-                    that._clipLengthDisplay.style.display = 'none';
+                    // that._clipLengthDisplay.style.display = 'none';
                     that._exportBtn.classList.add('amve-btn-disabled');
                 }
 
