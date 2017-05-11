@@ -97,8 +97,8 @@ module AMVE {
 
                         this._playerControlBar = new AMVEPlayerControlBar(this);
                         this._bottomControlBar = new AMVEBottomControlBar(this);
-                        this._markControlBar = new AMVEMarkControlBar(this);
                         this._scrubber = new AMVEScrubber(this);
+                        this._markControlBar = new AMVEMarkControlBar(this);
                         this._submitDlg = new AMVESubmitDialog(this);
                         this._settingsDlg = new AMVESettingsDialog(this);
                         this._animationsStyle = <HTMLStyleElement>document.createElement('style');
