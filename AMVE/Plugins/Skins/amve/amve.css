@@ -1143,6 +1143,7 @@
 .amve-right-column-elements {
     display: flex;
     justify-content: flex-end;
+    width: 50px
 }
 
 .amve-right-column-elements .amve-right-column-element {
