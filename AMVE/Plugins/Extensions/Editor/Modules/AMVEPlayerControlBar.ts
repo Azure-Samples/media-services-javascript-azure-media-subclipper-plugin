@@ -293,10 +293,11 @@ module AMVE {
              */
             function positionAndDisplayVolume(): void {
                 var box = that._amveUX.findPosition(that._controlBarElement);
+                var volumeTopPosition = that._controlBarElement.parentElement.clientHeight;
 
                 that._volumeBar.style.display = 'block';
                 // that._volumeBar.style.top = ((box.top - (that._volumeBar.clientHeight) - that._controlBarElement.clientHeight) - (that._volumeButton.clientHeight * 2) - 60) + 'px';
-                that._volumeBar.style.bottom = '277px';
+                that._volumeBar.style.bottom = volumeTopPosition + 'px';
                 // that._volumeBar.style.left = ((that._controlBarElement.clientWidth - that._volumeBar.clientWidth - (that._volumeButton.clientWidth / 2)) - 8) + 'px';
                 that._volumeBar.style.left = ((that._controlBarElement.clientWidth - that._volumeBar.clientWidth - (that._volumeButton.clientWidth / 2)) - 32) + 'px';
                 that._volumeButton.classList.remove('amve-muted');
