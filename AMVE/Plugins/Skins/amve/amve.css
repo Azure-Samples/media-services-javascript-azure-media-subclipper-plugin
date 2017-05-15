@@ -365,7 +365,8 @@
     -webkit-flex-order: 0;
     -ms-flex-order: 0;
     order: 0;
-    white-space: nowrap
+    white-space: nowrap;
+    display: flex
 }
 
 .amve-container .amve-bottom .amve-player-controlbar .amve-left-column .amve-btn {
@@ -715,7 +716,8 @@
     flex: 2;
     -webkit-flex-order: 2;
     -ms-flex-order: 2;
-    order: 2
+    order: 2;
+    width: 2px
 }
 
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-left .amve-markin-controls-container {
