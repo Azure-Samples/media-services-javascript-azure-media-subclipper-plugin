@@ -1,11 +1,10 @@
 ﻿@font-face {
-    font-family: 'amve';
-    src: url('fonts/amve.eot');
-    src: url('fonts/amve.woff') format('woff'), url('fonts/amve.ttf') format('truetype'), url('fonts/amve.svg#icomoon') format('svg');
-    font-weight: normal;
+    font-family: amve;
+    src: url(fonts/amve.eot);
+    src: url(fonts/amve.woff) format('woff'), url(fonts/amve.ttf) format('truetype'), url(fonts/amve.svg#icomoon) format('svg');
+    font-weight: 400;
     font-style: normal
 }
-
 .amve-container {
     position: relative;
     width: 100%;
@@ -19,50 +18,40 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    outline: none;
+    outline: 0;
     font-size: 18px
 }
-
-.amve-container div {
-    outline: none
-}
-
+.amve-container div,
 .amve-container input {
-    outline: none
+    outline: 0
 }
-
 .amve-container .amve-btn {
     position: relative;
     background-color: #000;
     color: #fff;
     cursor: pointer
 }
-
 .amve-container .amve-btn-disabled {
     background-color: #acacac;
     color: #ddd;
     cursor: not-allowed
 }
-
 .amve-container .amve-btn:hover {
     background-color: rgba(255, 255, 255, .1)
 }
-
 .amve-container .amve-btn-disabled:hover {
     background-color: #acacac;
     color: #ddd
 }
-
 .amve-container .amve-btn-text {
     padding: 5px;
     cursor: pointer;
     text-align: center
 }
-
 .amve-container .amve-btn-control {
     background-color: transparent;
     color: #fff;
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     width: 25px;
     height: 25px;
     font-size: 25px;
@@ -70,172 +59,129 @@
     text-align: center;
     cursor: pointer
 }
-
 .amve-container .amve-btn-control.amve-btn-disabled {
     background-color: transparent;
     color: #acacac;
     cursor: not-allowed
 }
-
 .amve-container .amve-btn-control:hover {
     background-color: rgba(255, 255, 255, .1)
 }
-
 .amve-container .amve-btn-control.amve-btn-disabled:hover {
     background-color: transparent;
     color: #acacac
 }
-
 .amve-container .amve-settings-btn:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
+.amve-container .amve-rwd-btn.speed-1x:before,
 .amve-container .amve-rwd-btn:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
-.amve-container .amve-rwd-btn.speed-1x:before {
-    font-family: 'azuremediaplayer';
-    content: ""
-}
-
 .amve-container .amve-rwd-btn.speed-2x:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-rwd-btn.speed-4x:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-rwd-btn.speed-8x:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-rwd-btn.speed-16x:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-rwd-btn.speed-32x:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-rwd-btn.speed-64x:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-rwd-btn.speed-128x:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
+.amve-container .amve-fwd-btn.speed-1x:before,
 .amve-container .amve-fwd-btn:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
-.amve-container .amve-fwd-btn.speed-1x:before {
-    font-family: 'azuremediaplayer';
-    content: ""
-}
-
 .amve-container .amve-fwd-btn.speed-2x:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-fwd-btn.speed-4x:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-fwd-btn.speed-8x:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-fwd-btn.speed-16x:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-fwd-btn.speed-32x:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-fwd-btn.speed-64x:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-fwd-btn.speed-128x:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-play-btn:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-play-btn.amve-playing:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-volume-btn:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-volume-btn.amve-muted:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: ""
 }
-
 .amve-container .amve-chevron-left:before {
-    font-family: 'amve';
+    font-family: amve;
     content: ""
 }
-
 .amve-container .amve-chevron-right:before {
-    font-family: 'amve';
+    font-family: amve;
     content: ""
 }
-
-.amve-container .amve-mark-in:before {
-    font-family: 'amve';
-    content: ""
-}
-
+.amve-container .amve-mark-in:before,
 .amve-container .amve-mark-out:before {
-    font-family: 'amve';
+    font-family: amve;
     content: ""
 }
-
 .amve-container .amve-close-btn:before {
-    font-family: 'amve';
+    font-family: amve;
     content: ""
 }
-
 .amve-container .amve-zoom-in:before {
-    font-family: 'amve';
+    font-family: amve;
     content: ""
 }
-
 .amve-container .amve-zoom-out:before {
-    font-family: 'amve';
+    font-family: amve;
     content: ""
 }
-
 .amve-container .amve-top-controlbar {
     position: relative;
     margin: 0;
@@ -252,7 +198,6 @@
     -ms-flex-wrap: nowrap;
     justify-content: center
 }
-
 .amve-container .amve-top-controlbar .amve-left-column {
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -261,7 +206,6 @@
     -ms-flex-order: 0;
     order: 0
 }
-
 .amve-container .amve-top-controlbar .amve-right-column {
     max-width: 400px;
     -webkit-flex: 2;
@@ -271,7 +215,6 @@
     -ms-flex-order: 1;
     order: 1
 }
-
 .amve-container .amve-top-controlbar .amve-left-column .amve-submitdlg-title {
     padding: 10px;
     height: 40px;
@@ -279,7 +222,6 @@
     vertical-align: middle;
     color: #ddd
 }
-
 .amve-container .amve-top-controlbar .amve-right-column .amve-top-menu {
     margin: 0;
     display: flex;
@@ -291,41 +233,30 @@
     -ms-flex-wrap: nowrap;
     justify-content: center
 }
-
 .amve-container .amve-top-controlbar .amve-right-column .amve-top-menu .amve-btn {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1
 }
-
 .amve-container .amve-top-controlbar .amve-right-column .amve-top-menu .amve-btn-text {
     margin: 10px;
     max-width: 100px
 }
-
 .amve-container .amve-top-controlbar .amve-right-column .amve-top-menu .amve-btn-control {
     margin: 15px;
     max-width: 25px
 }
-
-.amve-container .amve-top-controlbar .amve-right-column .amve-top-menu .amve-btn-text.amve-selected {
-    background-color: rgba(49, 164, 232, .8);
-    color: #fff;
-    border: none
-}
-
+.amve-container .amve-top-controlbar .amve-right-column .amve-top-menu .amve-btn-text.amve-selected,
 .amve-container .amve-top-controlbar .amve-right-column .amve-top-menu .amve-btn-text.amve-selected:hover {
     background-color: rgba(49, 164, 232, .8);
     color: #fff;
     border: none
 }
-
 .amve-container .amve-player-container {
     width: 100%;
     margin: 0;
     background-color: #000
 }
-
 .amve-container .amve-player-container .azuremediaplayer {
     width: 100%;
     position: relative;
@@ -333,21 +264,18 @@
     background-color: #3f3f3f;
     min-height: 200px
 }
-
 .amve-container .amve-player-container .azuremediaplayer video {
     min-height: 200px;
     background-color: #3f3f3f
 }
-
 .amve-container .amve-bottom {
     width: 100%;
     background-color: #3f3f3f;
     padding-bottom: 10px
 }
-
 .amve-container .amve-bottom .amve-player-controlbar {
     width: 100%;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 20px;
     display: flex;
     flex-direction: row;
     -webkit-flex-direction: row;
@@ -357,7 +285,6 @@
     -ms-flex-wrap: nowrap;
     justify-content: space-between
 }
-
 .amve-container .amve-bottom .amve-player-controlbar .amve-left-column {
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -368,23 +295,18 @@
     white-space: nowrap;
     display: flex
 }
-
 .amve-container .amve-bottom .amve-player-controlbar .amve-left-column .amve-btn {
     float: left;
     margin-left: 15px
 }
-
 .amve-container .amve-bottom .amve-player-controlbar .amve-left-column .amve-btn:first-child {
     margin-left: 0
 }
-
 #amve>div.amve-bottom>div.amve-player-controlbar>div.amve-left-column>div.amve-btn.amve-btn-text.amve-live-btn.amve-live-edge {
     background-color: #e87216;
     border: 2px solid #fff
 }
-
 .amve-container .amve-bottom .amve-player-controlbar .amve-center-column {
-    margin: 0 auto;
     margin: auto;
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -394,7 +316,6 @@
     order: 1;
     align-self: center
 }
-
 .amve-container .amve-bottom .amve-player-controlbar .amve-right-column {
     flex: 1;
     -webkit-flex: 1;
@@ -403,11 +324,9 @@
     -ms-flex-order: 2;
     order: 2
 }
-
 .amve-container .amve-bottom .amve-player-controlbar .amve-right-column div {
     margin-left: auto
 }
-
 .amve-container .amve-bottom .amve-player-controlbar .amve-center-column .amve-time-display {
     text-align: center;
     display: none;
@@ -417,7 +336,6 @@
     text-shadow: .05em .05em .1em #000;
     margin-top: -10px
 }
-
 .amve-container .amve-volume-bar {
     display: none;
     position: absolute;
@@ -428,7 +346,6 @@
     border: 1px solid rgba(41, 43, 43, .9);
     cursor: pointer
 }
-
 .amve-container .amve-volume-bar .amve-volume-track {
     display: block;
     position: absolute;
@@ -439,7 +356,6 @@
     margin-top: 20px;
     margin-left: 17px
 }
-
 .amve-container .amve-volume-bar .amve-volume-fill {
     display: block;
     position: relative;
@@ -453,7 +369,6 @@
     margin-top: 20px;
     margin-left: 17px
 }
-
 .amve-container .amve-volume-bar .amve-volume-handle {
     z-index: 105;
     display: block;
@@ -462,31 +377,26 @@
     margin-top: 5px;
     margin-left: 8px
 }
-
 .amve-container .amve-volume-bar .amve-volume-handle:before {
     content: "";
     width: 35px;
     height: 35px;
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     font-size: 22px
 }
-
 .amve-container .amve-bottom .amve-zoom {
     position: relative;
     z-index: 105;
     width: 75px;
     margin: 5px 25px 35px auto
 }
-
 .amve-container .amve-bottom .amve-zoom .amve-zoom-out {
     float: left
 }
-
 .amve-container .amve-bottom .amve-zoom .amve-zoom-in {
     float: right;
     margin-left: 10px
 }
-
 .amve-container .amve-bottom .amve-mark-controlbar {
     position: relative;
     width: 90%;
@@ -496,33 +406,29 @@
     margin-left: auto;
     margin-right: auto
 }
-
-.amve-container .amve-bottom .amve-mark-controlbar .amve-mark-in {
-    display: none;
-    position: absolute;
-    font-family: 'azuremediaplayer';
-    z-index: 105;
-    font-size: 33px;
-    width: 30px;
-    top: -14px;
-    margin-left: -20px;
-    cursor: pointer;
-    color: #fff
-}
-
+.amve-container .amve-bottom .amve-mark-controlbar .amve-mark-in,
 .amve-container .amve-bottom .amve-mark-controlbar .amve-mark-out {
-    display: none;
-    position: absolute;
-    font-family: 'azuremediaplayer';
     z-index: 105;
     font-size: 33px;
     top: -14px;
-    left: 90%;
-    margin-right: 20px;
+    color: #fff;
+    position: absolute;
+    display: none;
     cursor: pointer;
-    color: #fff
+    font-family: azuremediaplayer
 }
-
+.amve-container .amve-bottom .amve-mark-controlbar .amve-mark-in {
+    width: 30px;
+    margin-left: -20px
+}
+.amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-left div,
+.amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-right-column div {
+    margin-left: auto
+}
+.amve-container .amve-bottom .amve-mark-controlbar .amve-mark-out {
+    left: 90%;
+    margin-right: 20px
+}
 .amve-container .amve-bottom .amve-mark-controlbar .amve-mark-fill {
     display: none;
     position: absolute;
@@ -535,24 +441,7 @@
     color: #e8e6e6;
     text-shadow: .05em .05em .1em #000
 }
-
-.amve-container .amve-bottom .amve-mark-controlbar .amve-mark-in-warning {
-    display: none;
-    position: absolute;
-    top: 0;
-    z-index: 104;
-    text-align: center;
-    font-size: 11px;
-    background-color: rgba(41, 43, 43, .8);
-    border: 1px solid rgba(41, 43, 43, .9);
-    vertical-align: middle;
-    color: #e82c0c;
-    font-weight: bold;
-    width: 275px;
-    height: 40px;
-    text-shadow: .05em .05em .1em #000
-}
-
+.amve-container .amve-bottom .amve-mark-controlbar .amve-mark-in-warning,
 .amve-container .amve-bottom .amve-mark-controlbar .amve-mark-out-warning {
     display: none;
     position: absolute;
@@ -564,12 +453,11 @@
     border: 1px solid rgba(41, 43, 43, .9);
     vertical-align: middle;
     color: #e82c0c;
-    font-weight: bold;
+    font-weight: 700;
     width: 275px;
     height: 40px;
     text-shadow: .05em .05em .1em #000
 }
-
 .amve-container .amve-bottom .amve-scrubber {
     position: relative;
     width: 90%;
@@ -577,7 +465,6 @@
     height: 20px;
     background: #979797
 }
-
 .amve-container .amve-bottom .amve-scrubber .amve-scrubber-progress {
     position: absolute;
     top: 0;
@@ -587,7 +474,6 @@
     background-color: rgba(49, 164, 232, .8);
     left: 0
 }
-
 .amve-container .amve-bottom .amve-scrubber .amve-scrubber-markfill {
     display: none;
     position: absolute;
@@ -596,7 +482,6 @@
     height: 20px;
     background-color: #e87216
 }
-
 .amve-container .amve-bottom .amve-scrubber-display {
     display: none;
     position: absolute;
@@ -607,10 +492,9 @@
     color: #e8e6e6;
     text-shadow: .05em .05em .1em #000
 }
-
 .amve-container .amve-bottom .amve-scrubber-handle {
     position: relative;
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     z-index: 104;
     font-size: 30px;
     width: 30px;
@@ -618,11 +502,9 @@
     cursor: pointer;
     color: #fff
 }
-
 .amve-container .amve-bottom .amve-scrubber-handle:before {
     content: ""
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar {
     position: relative;
     min-height: 90px;
@@ -631,7 +513,6 @@
     color: #fff;
     padding: 0 25px 25px
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top {
     position: relative;
     width: 100%;
@@ -643,7 +524,6 @@
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-left-column {
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -654,7 +534,6 @@
     min-width: 105px;
     max-width: 105px
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column {
     -webkit-flex: 3;
     -ms-flex: 3;
@@ -672,7 +551,6 @@
     justify-content: center;
     min-width: 200px
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-right-column {
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -683,11 +561,6 @@
     min-width: 105px;
     max-width: 105px
 }
-
-.amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-right-column div {
-    margin-left: auto
-}
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-left {
     -webkit-flex: 2;
     -ms-flex: 2;
@@ -696,11 +569,6 @@
     -ms-flex-order: 0;
     order: 0
 }
-
-.amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-left div {
-    margin-left: auto
-}
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-center {
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -709,7 +577,6 @@
     -ms-flex-order: 1;
     order: 1
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-right {
     -webkit-flex: 2;
     -ms-flex: 2;
@@ -719,20 +586,17 @@
     order: 2;
     width: 2px
 }
-
-.amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-left .amve-markin-controls-container {
+.amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-left .amve-markin-controls-container,
+.amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-right .amve-markout-controls-container {
     width: 150px
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-left .amve-markin-controls-container .amve-markin-controls {
     white-space: nowrap
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-left .amve-markin-controls-container .amve-markin-controls .amve-markin-leftarrow {
     float: left;
     margin-top: 3px
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-left .amve-markin-controls-container .amve-markin-controls .amve-markin-display-container {
     vertical-align: middle;
     text-align: center;
@@ -741,17 +605,14 @@
     text-shadow: .05em .05em .1em #000;
     float: left
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-left .amve-markin-controls-container .amve-markin-controls .amve-markin-display-container .amve-markin-display {
     display: none;
     margin-top: 10px;
     cursor: pointer
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-left .amve-markin-controls-container .amve-markin-controls .amve-markin-rightarrow {
     margin-top: 3px
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-center .amve-cliplength-display {
     margin-top: 5px;
     display: none;
@@ -760,20 +621,13 @@
     color: #e8e6e6;
     text-shadow: .05em .05em .1em #000
 }
-
-.amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-right .amve-markout-controls-container {
-    width: 150px
-}
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-right .amve-markout-controls-container .amve-markout-controls {
     white-space: nowrap
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-right .amve-markout-controls-container .amve-markout-controls .amve-markout-leftarrow {
     float: left;
     margin-top: 3px
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-right .amve-markout-controls-container .amve-markout-controls .amve-markout-display-container {
     vertical-align: middle;
     text-align: center;
@@ -782,17 +636,18 @@
     text-shadow: .05em .05em .1em #000;
     float: left
 }
-
+.amve-container .amve-settings .amve-settings-title-bar .amve-right-column .amve-close-btn,
+.amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-top .amve-right-column .amve-close-btn {
+    font-size: 18px
+}
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-right .amve-markout-controls-container .amve-markout-controls .amve-markout-display-container .amve-markout-display {
     display: none;
     margin-top: 10px;
     cursor: pointer
 }
-
 .amve-container .amve-bottom .amve-bottom-controlbar .amve-bottom-controlbar-top .amve-center-column .amve-center-column-right .amve-markout-controls-container .amve-markout-controls .amve-markout-rightarrow {
     margin-top: 3px
 }
-
 .amve-modal {
     display: none;
     position: fixed;
@@ -806,7 +661,6 @@
     background-color: #000;
     background-color: rgba(0, 0, 0, .4)
 }
-
 .amve-modal-content {
     position: relative;
     background-color: #3f3f3f;
@@ -820,30 +674,26 @@
     animation-name: amve-modal-animatetop;
     animation-duration: .4s
 }
-
-@-webkit-keyframes "amve-modal-animatetop" {
+@-webkit-keyframes amve-modal-animatetop {
     from {
-        opacity: 0;
+        opacity: 0
     }
     to {
-        opacity: 1;
+        opacity: 1
     }
 }
-
-@keyframes "amve-modal-animatetop" {
+@keyframes amve-modal-animatetop {
     from {
-        opacity: 0;
+        opacity: 0
     }
     to {
-        opacity: 1;
+        opacity: 1
     }
 }
-
 .amve-container .amve-submitdlg-entry-content {
     width: 580px;
     height: 250px
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-top {
     margin: 15px;
     display: flex;
@@ -855,7 +705,6 @@
     -ms-flex-wrap: nowrap;
     justify-content: center
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-top .amve-left-column {
     -webkit-flex: 2;
     -ms-flex: 2;
@@ -865,7 +714,6 @@
     order: 0;
     margin: 0 auto
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-top .amve-right-column {
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -875,22 +723,15 @@
     order: 1;
     max-width: 25px
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-top .amve-left-column .amve-submitdlg-title {
     vertical-align: middle;
     color: #ddd;
-    font-weight: bold;
+    font-weight: 700;
     height: 25px
 }
-
-.amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-top .amve-right-column .amve-close-btn {
-    font-size: 18px
-}
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-top .amve-right-column .amve-close-btn:hover {
     color: #fff
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-thumbnails-spinner {
     background: url(//amp.azure.net/libs/amp/1.7.2/skins/amp-default/icons/buffering-rainbow-bg.png);
     margin: 10px auto;
@@ -898,11 +739,9 @@
     height: 96px;
     display: block
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-thumbnails-spinner:before {
-    content: url('//amp.azure.net/libs/amp/1.7.2/skins/amp-default/icons/buffering-rainbow.gif')
+    content: url(//amp.azure.net/libs/amp/1.7.2/skins/amp-default/icons/buffering-rainbow.gif)
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-thumbnails {
     margin: 10px auto;
     width: 484px;
@@ -911,14 +750,12 @@
     white-space: nowrap;
     display: none
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-thumbnails .amve-btn-control {
     margin-top: 35px;
     margin-right: 10px;
     float: left;
     width: 25px
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-thumbnails .amve-thumbnail {
     margin-right: 10px;
     float: left;
@@ -928,39 +765,32 @@
     display: none;
     cursor: pointer
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-thumbnails .amve-thumbnail.amve-selected {
     border: 2px solid #fff
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-middle {
     height: 270px;
-    margin: 0 15px 15px 15px;
+    margin: 0 15px 15px;
     overflow-y: auto
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-middle .amve-submitdlg-entry-title {
     width: 480px;
     height: 30px;
     margin-top: 5px
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-middle .amve-submitdlg-entry-description {
     width: 480px;
     height: 125px;
     margin-top: 5px
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-middle .amve-submitdlg-entry-custom {
     width: 480px;
     margin: 0;
     display: none
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-middle .amve-submitdlg-entry-custom input {
     margin-top: 5px
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-bottom {
     display: flex;
     flex-direction: row;
@@ -971,7 +801,6 @@
     -ms-flex-wrap: nowrap;
     justify-content: center
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-bottom .amve-margin {
     -webkit-flex: 2;
     -ms-flex: 2;
@@ -980,7 +809,6 @@
     -ms-flex-order: 0;
     order: 0
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-bottom .amve-cancel-btn {
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -990,7 +818,6 @@
     order: 1;
     max-width: 105px
 }
-
 .amve-container .amve-submitdlg-entry .amve-submitdlg-entry-content .amve-submitdlg-entry-bottom .amve-submit-btn {
     margin-left: 10px;
     margin-right: 20px;
@@ -1002,17 +829,14 @@
     order: 2;
     max-width: 105px
 }
-
 .amve-container .amve-settings .amve-settings-content {
     width: 320px;
     height: 320px
 }
-
 .amve-container .amve-settings .amve-btn-control {
     background-color: transparent;
     color: #a0a0a0
 }
-
 .amve-container .amve-settings .amve-settings-title-bar {
     display: flex;
     flex-direction: row;
@@ -1023,7 +847,6 @@
     -ms-flex-wrap: nowrap;
     justify-content: center
 }
-
 .amve-container .amve-settings .amve-settings-title-bar .amve-left-column {
     -webkit-flex: 2;
     -ms-flex: 2;
@@ -1033,7 +856,6 @@
     order: 0;
     margin: 0 auto
 }
-
 .amve-container .amve-settings .amve-settings-title-bar .amve-right-column {
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -1043,46 +865,34 @@
     order: 1;
     max-width: 25px
 }
-
 .amve-container .amve-settings .amve-settings-title-bar .amve-left-column .amve-settings-title {
     vertical-align: middle;
     color: #ddd;
-    font-weight: bold;
+    font-weight: 700;
     height: 25px
 }
-
-.amve-container .amve-settings .amve-settings-title-bar .amve-right-column .amve-close-btn {
-    font-size: 18px
-}
-
 .amve-container .amve-settings .amve-settings-title-bar .amve-right-column .amve-close-btn:hover {
     color: #fff
 }
-
 .amve-container .amve-settings .amve-settings-framerate-label {
     margin-right: 10px;
     float: left
 }
-
 .amve-container .amve-settings .amve-settings-framerate-input {
     color: #000
 }
-
 .amve-container .amve-settings .amve-settings-numthumbnails-label {
     margin-top: 10px
 }
-
 .amve-container .amve-settings .amve-settings-numthumbnails .amve-settings-numthumbnails-input {
     margin: 5px 10px 0 0;
     max-width: 200px;
     width: 200px;
     float: left
 }
-
 .amve-container .amve-settings .amve-settings-numthumbnails .amve-settings-numthumbnails-display {
     margin-top: -20px
 }
-
 .amve-container .amve-settings .amve-settings-btn-bar {
     display: flex;
     flex-direction: row;
@@ -1093,7 +903,6 @@
     -ms-flex-wrap: nowrap;
     justify-content: center
 }
-
 .amve-container .amve-settings .amve-settings-btn-bar .amve-margin {
     -webkit-flex: 2;
     -ms-flex: 2;
@@ -1102,7 +911,6 @@
     -ms-flex-order: 0;
     order: 0
 }
-
 .amve-container .amve-settings .amve-settings-btn-bar .amve-cancel-btn {
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -1112,7 +920,6 @@
     order: 1;
     max-width: 105px
 }
-
 .amve-container .amve-settings .amve-settings-btn-bar .amve-save-btn {
     margin-left: 10px;
     margin-right: 20px;
@@ -1124,7 +931,6 @@
     order: 2;
     max-width: 105px
 }
-
 .amve-container .amve-cover-image {
     display: none;
     position: absolute;
@@ -1133,96 +939,72 @@
     top: 0;
     left: 0
 }
-
 .amve-fullscreen-btn:before {
-    font-family: 'azuremediaplayer';
+    font-family: azuremediaplayer;
     content: "\E607 "
 }
-
 .amve-right-column-elements {
     display: flex;
     justify-content: flex-end;
-    width: 50px;
+    width: 50px
 }
-
 .amve-right-column-elements .amve-right-column-element {
     margin: 0 5px
 }
-
 .amve-btn-parent {
     display: flex;
     justify-content: flex-end
 }
-
 .amve-btn-parent .amve-btn-child {
     justify-content: space-between;
     vertical-align: middle
 }
-
 .amve-bottom-control-bar-container {
     display: flex;
     width: 100%;
     align-items: center
 }
-
 .amve-set-marks {
     order: 1
 }
-
 .amve-set-thumbnail {
     margin-left: auto;
-    order: 2;
+    order: 2
 }
-
 .amve-no-margin {
-    margin: 0px !important
+    margin: 0!important
 }
-
-.amve-bottom-label {
-    left: -120px;
-    background: rgba(98, 98, 98, 0) !important;
-    font-size: 14px
-}
-
 .amve-marks-container {
     display: flex;
     flex-direction: row
 }
-
 .amve-mark-in-setup {
     order: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: column
 }
-
 .amve-mark-out-setup {
     order: 2;
     display: flex;
-    flex-direction: column;
+    flex-direction: column
 }
-
 .amve-time-display {
     order: 1;
     margin: auto
 }
-
 .amve-mark-row {
     order: 2;
     display: flex;
     flex-direction: row
 }
-
 .amve-mark-left-arrow {
     order: 1
 }
-
 .amve-mark-label {
     order: 2;
     text-align: justify;
     white-space: nowrap
 }
-
-
 .amve-mark-right-arrow {
     order: 3
 }
