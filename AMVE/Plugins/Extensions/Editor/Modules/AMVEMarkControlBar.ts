@@ -31,11 +31,6 @@ module AMVE {
                 this._amveUX.createElement(['amve-mark-controlbar']);
             this._amveUX.appendBottomChild(this._markControlElement);
 
-            this._markControlElementLabel =
-                this._amveUX.createElement(['amve-mark-controlbar', 'amve-bottom-label']);
-            this._markControlElementLabel.innerHTML = 'Clip';
-            this._markControlElement.appendChild(this._markControlElementLabel);
-
             this._markFillElement =
                 this._amveUX.createElement(['amve-mark-fill']);
             this._markControlElement.appendChild(this._markFillElement);

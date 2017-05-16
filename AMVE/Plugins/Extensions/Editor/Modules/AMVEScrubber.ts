@@ -35,11 +35,6 @@ module AMVE {
                 this._amveUX.createElement(['amve-scrubber']);
             this._amveUX.appendBottomChild(this._scrubberElement);
 
-            this._scrubberElementLabel =
-                this._amveUX.createElement(['amve-scrubber', 'amve-bottom-label']);
-            this._scrubberElementLabel.innerHTML = 'Stream';
-            this._scrubberElement.appendChild(this._scrubberElementLabel);
-
             this._scrubberZoomElement =
                 this._amveUX.createElement(['amve-scrubber-zoom']);
             this._scrubberElement.appendChild(this._scrubberZoomElement);
