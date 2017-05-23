@@ -163,6 +163,12 @@ module AMVE {
              */
             this._playBtn.addEventListener('click', function () {
                 that.resetFwdRwd();
+                if (that._amveUX.player.playerElement().classList.contains("amve-rewind")) {
+                    that._amveUX.player.playerElement().classList.remove("amve-rewind");
+                }
+                if (that._amveUX.player.playerElement().classList.contains("amve-fast-forward")) {
+                    that._amveUX.player.playerElement().classList.remove("amve-fast-forward");
+                }
                 if (that._amveUX.player.paused()) {
                     that._amveUX.player.play();
                 } else {
@@ -216,6 +222,12 @@ module AMVE {
              * Stops forwarding if forwarding, steps through rewinding otherwise
              */
             this._rwdBtn.addEventListener('click', function () {
+                if (!that._amveUX.player.playerElement().classList.contains("amve-rewind")) {
+                    that._amveUX.player.playerElement().classList.add("amve-rewind");
+                }
+                if (that._amveUX.player.playerElement().classList.contains("amve-fast-forward")) {
+                    that._amveUX.player.playerElement().classList.remove("amve-fast-forward");
+                }
                 that.rwd();
             });
 
@@ -223,6 +235,12 @@ module AMVE {
              * Stops rewinding if rewinding, steps through forwarding otherwise
              */
             this._fwdBtn.addEventListener('click', function () {
+                if (!that._amveUX.player.playerElement().classList.contains("amve-fast-forward")) {
+                    that._amveUX.player.playerElement().classList.add("amve-fast-forward");
+                }
+                if (that._amveUX.player.playerElement().classList.contains("amve-rewind")) {
+                    that._amveUX.player.playerElement().classList.remove("amve-rewind");
+                }
                 that.ffwd();
             });
 
