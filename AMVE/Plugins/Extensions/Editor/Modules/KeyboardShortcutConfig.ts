@@ -222,10 +222,10 @@ export class KeyboardShortcutConfig {
     public markOutFiveFramesShortcut: string = 'alt+shift+.';
     public undoShortcut: string = 'ctrl+z';
     public redoShortcut: string = 'ctrl+y';
-    public exportShortcut: string = 's';
-    public changeModeVirtualShortcut: string = 'shift+v';
-    public changeModeRenderedShortcut: string = 'shift+r';
-    public changeModeTrimShortcut: string = 'shift+t';
+    // public exportShortcut: string = 's';
+    // public changeModeVirtualShortcut: string = 'shift+v';
+    // public changeModeRenderedShortcut: string = 'shift+r';
+    // public changeModeTrimShortcut: string = 'shift+t';
 }
 
 /**

@@ -3,7 +3,7 @@
 import { IEventSource } from "../Interfaces/IEventSource";
 import { AMVEClipData } from "../Modules/AMVEClipData";
 // import { KeyboardShortcutConfig } from "../Modules/KeyboardShortcutConfig"
-import { KeyboardShortcutConfig, AdobePremierProShortcutConfig as AdobePremierPro } from "../Modules/KeyboardShortcutConfig";
+import { KeyboardShortcutConfig, AdobePremierProShortcutConfig as AdobePremierPro, AvidShortcutConfig as Avid } from "../Modules/KeyboardShortcutConfig";
 import { AMVEUX } from "../Modules/AMVEUX";
 
 /**
@@ -32,6 +32,7 @@ amp.plugin('AMVE', function AMVEPlugin(options: Object) {
 // module AMVE {
 module AMVE {
     export class AdobePremierProShortcutConfig extends AdobePremierPro {}
+    export class AvidShortcutConfig extends Avid {}
     /**
      * Core logic for AMVE
      */

@@ -21,7 +21,7 @@ module AMVE {
     export class AMVEUX implements IPropertyChangeEventSource {
         public player: amp.Player;
         private _amveCore: AMVECore;
-        private _mode: EditorModes = EditorModes.Virtual;
+        private _mode: EditorModes = EditorModes.Rendered;
         private _frameRate: AMVEFrameRates = AMVEFrameRates.ThirtyFPS;
         private _container: HTMLElement;
         private _playerContainer: HTMLElement;
@@ -620,21 +620,21 @@ module AMVE {
                         that._clipData.markOutPT = -1;
                     });
                 }
-                if (this._amveCore.keyboardShortcutConfig.changeModeVirtualShortcut) {
-                    this._keyboardShortcutMgr.addShortcut(this._amveCore.keyboardShortcutConfig.changeModeVirtualShortcut, function () {
-                        that.mode = EditorModes.Virtual;
-                    });
-                }
-                if (this._amveCore.keyboardShortcutConfig.changeModeRenderedShortcut) {
-                    this._keyboardShortcutMgr.addShortcut(this._amveCore.keyboardShortcutConfig.changeModeRenderedShortcut, function () {
-                        that.mode = EditorModes.Rendered;
-                    });
-                }
-                if (this._amveCore.keyboardShortcutConfig.changeModeTrimShortcut) {
-                    this._keyboardShortcutMgr.addShortcut(this._amveCore.keyboardShortcutConfig.changeModeTrimShortcut, function () {
-                        that.mode = EditorModes.Trim;
-                    });
-                }
+                // if (this._amveCore.keyboardShortcutConfig.changeModeVirtualShortcut) {
+                //     this._keyboardShortcutMgr.addShortcut(this._amveCore.keyboardShortcutConfig.changeModeVirtualShortcut, function () {
+                //         that.mode = EditorModes.Virtual;
+                //     });
+                // }
+                // if (this._amveCore.keyboardShortcutConfig.changeModeRenderedShortcut) {
+                //     this._keyboardShortcutMgr.addShortcut(this._amveCore.keyboardShortcutConfig.changeModeRenderedShortcut, function () {
+                //         that.mode = EditorModes.Rendered;
+                //     });
+                // }
+                // if (this._amveCore.keyboardShortcutConfig.changeModeTrimShortcut) {
+                //     this._keyboardShortcutMgr.addShortcut(this._amveCore.keyboardShortcutConfig.changeModeTrimShortcut, function () {
+                //         that.mode = EditorModes.Trim;
+                //     });
+                // }
             }
         }
 
