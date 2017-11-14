@@ -1,4 +1,13 @@
-﻿/**
+﻿function findFirst<T>(array: Array<T>, predicate: (value: T, idx: number) => boolean): T | null {
+    for (var idx: number = 0; idx < array.length; idx++) {
+        const value: T = array[idx];
+        if (predicate(value, idx)) {
+            return value;
+        }
+    }
+    return null;
+}
+/**
  * Used for creating keyboard shorcuts
  */
 export class KeyboardShortcut {
@@ -72,116 +81,114 @@ export class KeyboardShortcutManager {
     };
 
     public addShortcut(shortcutTxt: string, callback: Function, shouldPropagate: boolean = false): void {
-        // TODO fix Array.findFirst
-        // if (shortcutTxt && shortcutTxt.length > 0 && callback) {
-        //     if (!this._shortcuts.findFirst(function (sc) {
-        //         return sc.shortcutTxt == shortcutTxt;
-        //     })) {
-        //         var that = this;
+        if (shortcutTxt && shortcutTxt.length > 0 && callback) {
+            if (!findFirst(this._shortcuts, function (sc) {
+                return sc.shortcutTxt == shortcutTxt;
+            })) {
+                var that = this;
 
-        //         var keydownListener = function (e: any): void {
-        //             //Ignore shorcuts from within inputs and textareas
-        //             var element;
-        //             if (e.target) {
-        //                 element = e.target;
-        //             }
-        //             else if (e.srcElement) {
-        //                 element = e.srcElement;
-        //             }
-        //             if (element && element.nodeType == 3) {
-        //                 element = element.parentNode;
-        //             }
+                var keydownListener = function (e: any): void {
+                    //Ignore shorcuts from within inputs and textareas
+                    var element;
+                    if (e.target) {
+                        element = e.target;
+                    }
+                    else if (e.srcElement) {
+                        element = e.srcElement;
+                    }
+                    if (element && element.nodeType == 3) {
+                        element = element.parentNode;
+                    }
 
-        //             if (!element || element.tagName == 'INPUT' || element.tagName == 'TEXTAREA') { return };
+                    if (!element || element.tagName == 'INPUT' || element.tagName == 'TEXTAREA') { return };
 
-        //             var combos = shortcutTxt.split('||');
-        //             for (var i = 0; i < combos.length; i++) {
-        //                 var combo = combos[i].split('+');
+                    var combos = shortcutTxt.split('||');
+                    for (var i = 0; i < combos.length; i++) {
+                        var combo = combos[i].split('+');
 
-        //                 var inputCode = e.keyCode || e.which;
+                        var inputCode = e.keyCode || e.which;
 
-        //                 if (inputCode) {
-        //                     var requirements = {
-        //                         ctrl: false,
-        //                         shift: false,
-        //                         alt: false,
-        //                         meta: false,
-        //                         targetChar: ''
-        //                     };
+                        if (inputCode) {
+                            var requirements = {
+                                ctrl: false,
+                                shift: false,
+                                alt: false,
+                                meta: false,
+                                targetChar: ''
+                            };
 
-        //                     if (combo.length == 3) {
-        //                         requirements.ctrl = (combo[0] == 'ctrl' || combo[1] == 'ctrl');
-        //                         requirements.shift = (combo[0] == 'shift' || combo[1] == 'shift');
-        //                         requirements.alt = (combo[0] == 'alt' || combo[1] == 'alt');
-        //                         requirements.meta = (combo[0] == 'meta' || combo[1] == 'meta');
-        //                         requirements.targetChar = combo[2];
-        //                     } else if (combo.length == 2) {
-        //                         requirements.ctrl = (combo[0] == 'ctrl');
-        //                         requirements.shift = (combo[0] == 'shift');
-        //                         requirements.alt = (combo[0] == 'alt');
-        //                         requirements.meta = (combo[0] == 'meta');
-        //                         requirements.targetChar = combo[1];
-        //                     } else {
-        //                         requirements.targetChar = combo[0];
-        //                     }
+                            if (combo.length == 3) {
+                                requirements.ctrl = (combo[0] == 'ctrl' || combo[1] == 'ctrl');
+                                requirements.shift = (combo[0] == 'shift' || combo[1] == 'shift');
+                                requirements.alt = (combo[0] == 'alt' || combo[1] == 'alt');
+                                requirements.meta = (combo[0] == 'meta' || combo[1] == 'meta');
+                                requirements.targetChar = combo[2];
+                            } else if (combo.length == 2) {
+                                requirements.ctrl = (combo[0] == 'ctrl');
+                                requirements.shift = (combo[0] == 'shift');
+                                requirements.alt = (combo[0] == 'alt');
+                                requirements.meta = (combo[0] == 'meta');
+                                requirements.targetChar = combo[1];
+                            } else {
+                                requirements.targetChar = combo[0];
+                            }
 
-        //                     var comboMatch =
-        //                         (((requirements.ctrl && e.ctrlKey) || (!requirements.ctrl && !e.ctrlKey)) &&
-        //                         ((requirements.shift && e.shiftKey) || (!requirements.shift && !e.shiftKey)) &&
-        //                         ((requirements.alt && e.altKey) || (!requirements.alt && !e.altKey)) &&
-        //                         ((requirements.meta && e.metaKey) || (!requirements.meta && !e.metaKey)));
+                            var comboMatch =
+                                (((requirements.ctrl && e.ctrlKey) || (!requirements.ctrl && !e.ctrlKey)) &&
+                                ((requirements.shift && e.shiftKey) || (!requirements.shift && !e.shiftKey)) &&
+                                ((requirements.alt && e.altKey) || (!requirements.alt && !e.altKey)) &&
+                                ((requirements.meta && e.metaKey) || (!requirements.meta && !e.metaKey)));
 
-        //                     if (comboMatch) {
-        //                         if (that.specialKeys[requirements.targetChar]) {
-        //                             comboMatch = (that.specialKeys[requirements.targetChar] == inputCode);
-        //                         } else {
-        //                             var inputChar = String.fromCharCode(inputCode).toLowerCase();
-        //                             comboMatch = (requirements.targetChar == inputChar);
-        //                         }
+                            if (comboMatch) {
+                                if (that.specialKeys[requirements.targetChar]) {
+                                    comboMatch = (that.specialKeys[requirements.targetChar] == inputCode);
+                                } else {
+                                    var inputChar = String.fromCharCode(inputCode).toLowerCase();
+                                    comboMatch = (requirements.targetChar == inputChar);
+                                }
 
-        //                         if (comboMatch) {
-        //                             callback(e);
+                                if (comboMatch) {
+                                    callback(e);
 
-        //                             if (!shouldPropagate) {
-        //                                 //Stop the event
-        //                                 e.cancelBubble = true;
-        //                                 e.returnValue = false;
+                                    if (!shouldPropagate) {
+                                        //Stop the event
+                                        e.cancelBubble = true;
+                                        e.returnValue = false;
 
-        //                                 if (e.preventDefault) {
-        //                                     e.preventDefault();
-        //                                 }
+                                        if (e.preventDefault) {
+                                            e.preventDefault();
+                                        }
 
-        //                                 if (e.stopPropagation) {
-        //                                     e.stopPropagation();
-        //                                 }
-        //                                 return;
-        //                             }
-        //                             break;
-        //                         }
-        //                     }
-        //                 }
-        //             }
-        //         }
+                                        if (e.stopPropagation) {
+                                            e.stopPropagation();
+                                        }
+                                        return;
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
 
-        //         var shortcut = new KeyboardShortcut(shortcutTxt, callback, keydownListener, shouldPropagate);
-        //         this._shortcuts.push(shortcut);
+                var shortcut = new KeyboardShortcut(shortcutTxt, callback, keydownListener, shouldPropagate);
+                this._shortcuts.push(shortcut);
 
-        //         document.addEventListener('keydown', keydownListener, false);
-        //     } else {
-        //         throw new Error('There is already a shortcut registered for: ' + shortcutTxt);
-        //     }
-        // }
+                document.addEventListener('keydown', keydownListener, false);
+            } else {
+                throw new Error('There is already a shortcut registered for: ' + shortcutTxt);
+            }
+        }
     }
 
     public removeShortcut(shortcutTxtIn: string): void {
-        // TODO fix Array.findFirst
-        // var shortcut = this._shortcuts.findFirst(function (sc) {
-        //     return sc.shortcutTxt == shortcutTxtIn;
-        // });
-        // if (shortcut) {
-        //     document.removeEventListener('keydown', shortcut.keydownListener, false);
-        //     this._shortcuts.splice(this._shortcuts.indexOf(shortcut), 1);
-        // }
+        var shortcut = findFirst(this._shortcuts, function (sc) {
+            return sc.shortcutTxt == shortcutTxtIn;
+        });
+        if (shortcut) {
+            document.removeEventListener('keydown', shortcut.keydownListener, false);
+            this._shortcuts.splice(this._shortcuts.indexOf(shortcut), 1);
+        }
     }
 }
 
