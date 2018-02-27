@@ -110,7 +110,7 @@ module AMVE {
             if (markInPT != this._markInPT) {
                 this._markInPT = markInPT;
                 this.propertyChanged('markInPT');
-                if (markInPT > 0) {
+                if (markInPT >= 0) {
                     this._markIn = this._amveUX.toMediaTime(markInPT);
                 } else {
                     this._markIn = -1;
