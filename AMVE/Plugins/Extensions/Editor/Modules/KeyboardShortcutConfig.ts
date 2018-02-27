@@ -248,8 +248,8 @@ export class AvidShortcutConfig extends KeyboardShortcutConfig {
     public clearBothShortcut: string = 'g';
     public playInToOutShortcut: string = '6';
     public playToOutShortcut: string = '5';
-    public ffwdShortcut: string = 'ctrl+right';
-    public rwdShortcut: string = 'ctrl+left';
+    public ffwdShortcut: string = 'ctrl+right||meta+right';
+    public rwdShortcut: string = 'ctrl+left||meta+left';
     public backOneFrameShortcut: string = 'left';
     public backFiveFramesShortcut: string = 'alt+left||1';
     public backOneSecondShortcut: string = 'alt+shift+left';
