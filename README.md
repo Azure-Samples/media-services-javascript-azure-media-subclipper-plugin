@@ -1,7 +1,14 @@
 ---
-services: media-services
-platforms: javascript
-author: Ian N. Bennett (ianisms)
+page_type: sample
+languages:
+- typescript
+- javascript
+- html
+- csharp
+products:
+- azure
+description: "An Azure Media Player plugin that enables subclipping a live or on-demand video stream."
+urlFragment: media-services-javascript-azure-media-subclipper-plugin
 ---
 
 # Media Services: Subclipper Plugin for Azure Media Player
