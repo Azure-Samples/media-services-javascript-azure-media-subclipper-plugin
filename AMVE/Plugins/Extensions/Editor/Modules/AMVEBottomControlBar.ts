@@ -1,7 +1,5 @@
-﻿/// <reference path='../Modules/Common.ts' />
-/// <reference path='../Modules/AMVEUX.ts' />
-
-"use strict";
+﻿import { AMVEUX } from "../Modules/AMVEUX";
+import { EditorModes } from "../Modules/Common"
 
 module AMVE {
     /**
@@ -19,7 +17,9 @@ module AMVE {
         private _centerColCenter: HTMLElement;
         private _centerColRight: HTMLElement;
         private _resetBtn: HTMLElement;
+        private _thumbnailBtnContainer: HTMLElement;
         private _exportBtn: HTMLElement;
+        private _exportIcon: HTMLElement;
         private _setMarkInBtn: HTMLElement;
         private _setMarkOutBtn: HTMLElement;
         private _clipLengthDisplay: HTMLElement;
@@ -35,6 +35,27 @@ module AMVE {
         private _markOutDisplayContainer: HTMLElement;
         private _markOutDisplay: HTMLElement;
         private _markOutRightArrow: HTMLElement;
+        private _bottomControlBarContainer: HTMLElement;
+        private _setMarksContainer: HTMLElement;
+        private _setThumbnailsContainer: HTMLElement;
+        private _setMarkInBtnContainer:HTMLElement;
+        private _setMarkInIcon:HTMLElement;
+        private _setMarkOutBtnContainer:HTMLElement;
+        private _setMarkOutIcon:HTMLElement;
+        private _amveMarksSetup:HTMLElement;
+        private _amveMarkInSetup:HTMLElement;
+        private _amveMarkInTimeDisplay:HTMLElement;
+        private _amveMarkInRow:HTMLElement;
+        private _amveMarkInLeftArrow:HTMLElement;
+        private _amveMarkInLabel:HTMLElement;
+        private _amveMarkInRightArrow:HTMLElement;
+        private _amveMarkOutSetup:HTMLElement;
+        private _amveMarkOutTimeDisplay:HTMLElement;
+        private _amveMarkOutRow:HTMLElement;
+        private _amveMarkOutLeftArrow:HTMLElement;
+        private _amveMarkOutLabel:HTMLElement;
+        private _amveMarkOutRightArrow:HTMLElement;
+        
 
         constructor(amveUX: AMVEUX) {
             var that = this;
@@ -48,13 +69,25 @@ module AMVE {
                 this._amveUX.createElement(['amve-bottom-controlbar-top']);
             this._controlBarElement.appendChild(this._controlBarTopElement);
 
-            this._leftCol =
-                this._amveUX.createElement(['amve-left-column']);
-            this._controlBarTopElement.appendChild(this._leftCol);
+            // this._leftCol =
+            //     this._amveUX.createElement(['amve-left-column']);
+            // this._controlBarTopElement.appendChild(this._leftCol);
+
+            this._bottomControlBarContainer =
+                this._amveUX.createElement(['amve-bottom-control-bar-container']);
+            this._controlBarTopElement.appendChild(this._bottomControlBarContainer);
+
+            this._setMarksContainer =
+                this._amveUX.createElement(['amve-set-marks']);
+            this._bottomControlBarContainer.appendChild(this._setMarksContainer);
+
+            this._setThumbnailsContainer =
+                this._amveUX.createElement(['amve-set-thumbnail']);
+            this._bottomControlBarContainer.appendChild(this._setThumbnailsContainer);
 
             this._centerCol =
-                this._amveUX.createElement(['amve-center-column']);
-            this._controlBarTopElement.appendChild(this._centerCol);
+                this._amveUX.createElement(['amve-center-column', 'amve-no-margin']);
+            this._setMarksContainer.appendChild(this._centerCol);
 
             this._centerColLeft =
                 this._amveUX.createElement(['amve-center-column-left']);
@@ -70,21 +103,84 @@ module AMVE {
 
             this._rightCol =
                 this._amveUX.createElement(['amve-right-column']);
-            this._controlBarTopElement.appendChild(this._rightCol);
+            this._setThumbnailsContainer.appendChild(this._rightCol);
 
-            this._resetBtn =
-            this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-reset-btn']);
-            this._resetBtn.innerHTML = 'reset';
-            this._leftCol.appendChild(this._resetBtn);
+            // this._resetBtn =
+            // this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-reset-btn']);
+            // this._resetBtn.innerHTML = 'reset';
+            // this._leftCol.appendChild(this._resetBtn);
+
+            this._thumbnailBtnContainer =
+                this._amveUX.createElement(['amve-btn', 'amve-btn-parent']);
+            this._rightCol.appendChild(this._thumbnailBtnContainer);
 
             this._exportBtn =
-                this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-btn-disabled', 'amve-export-btn']);
-            this._exportBtn.innerHTML = 'export';
-            this._rightCol.appendChild(this._exportBtn);
+                this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-btn-disabled', 'amve-export-btn', 'amve-btn-child']);
+            this._exportBtn.innerHTML = 'Thumbnails';
+            this._thumbnailBtnContainer.appendChild(this._exportBtn);
 
-            this._clipLengthDisplay =
-                this._amveUX.createElement(['amve-cliplength-display']);
-            this._centerColCenter.appendChild(this._clipLengthDisplay);
+            this._exportIcon =
+                this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-export-icon', 'amve-btn-child']);
+            this._thumbnailBtnContainer.appendChild(this._exportIcon);
+
+            // this._clipLengthDisplay =
+            //     this._amveUX.createElement(['amve-cliplength-display']);
+            // this._centerColCenter.appendChild(this._clipLengthDisplay);
+
+            this._amveMarksSetup =
+                this._amveUX.createElement(['amve-marks-container']);
+            this._centerColLeft.appendChild(this._amveMarksSetup);
+
+            this._amveMarkInSetup =
+                this._amveUX.createElement(['amve-mark-in-setup']);
+            this._amveMarksSetup.appendChild(this._amveMarkInSetup);
+
+            this._amveMarkInTimeDisplay =
+                this._amveUX.createElement(['amve-time-display']);
+            this._amveMarkInSetup.appendChild(this._amveMarkInTimeDisplay);
+
+            this._amveMarkInRow =
+                this._amveUX.createElement(['amve-mark-row']);
+            this._amveMarkInSetup.appendChild(this._amveMarkInRow);
+
+            this._amveMarkInLeftArrow =
+                this._amveUX.createElement(['amve-mark-left-arrow']);
+            this._amveMarkInRow.appendChild(this._amveMarkInLeftArrow);
+
+            this._amveMarkInLabel =
+                this._amveUX.createElement(['amve-mark-label']);
+            this._amveMarkInRow.appendChild(this._amveMarkInLabel);
+
+            this._amveMarkInRightArrow =
+                this._amveUX.createElement(['amve-mark-right-arrow']);
+            this._amveMarkInRow.appendChild(this._amveMarkInRightArrow);
+
+            this._amveMarkOutSetup =
+                this._amveUX.createElement(['amve-mark-out-setup']);
+            this._amveMarksSetup.appendChild(this._amveMarkOutSetup);
+
+            this._amveMarkOutTimeDisplay =
+                this._amveUX.createElement(['amve-time-display']);
+            this._amveMarkOutSetup.appendChild(this._amveMarkOutTimeDisplay);
+
+            this._amveMarkOutRow =
+                this._amveUX.createElement(['amve-mark-row']);
+            this._amveMarkOutSetup.appendChild(this._amveMarkOutRow);
+
+            this._amveMarkOutLeftArrow =
+                this._amveUX.createElement(['amve-mark-left-arrow']);
+            this._amveMarkOutRow.appendChild(this._amveMarkOutLeftArrow);
+
+            this._amveMarkOutLabel =
+                this._amveUX.createElement(['amve-mark-label']);
+            this._amveMarkOutRow.appendChild(this._amveMarkOutLabel);
+
+            this._amveMarkOutRightArrow =
+                this._amveUX.createElement(['amve-mark-right-arrow']);
+            this._amveMarkOutRow.appendChild(this._amveMarkOutRightArrow);
+
+
+
 
             this._markInControlsContainer =
                 this._amveUX.createElement(['amve-markin-controls-container']);
@@ -104,45 +200,70 @@ module AMVE {
 
             this._markInLeftArrow =
                 this._amveUX.createElement(['amve-btn-control', 'amve-chevron-left', 'amve-markin-leftarrow']);
-            this._markInControls.appendChild(this._markInLeftArrow);
+            // this._markInControls.appendChild(this._markInLeftArrow);
+            this._amveMarkInLeftArrow.appendChild(this._markInLeftArrow);
 
             this._markInDisplayContainer =
                 this._amveUX.createElement(['amve-markin-display-container']);
             this._markInControls.appendChild(this._markInDisplayContainer);
 
+            this._setMarkInBtnContainer =
+                this._amveUX.createElement(['amve-btn', 'amve-btn-parent']);
+            // this._markInDisplayContainer.appendChild(this._setMarkInBtnContainer);
+            this._amveMarkInLabel.appendChild(this._setMarkInBtnContainer);
+
             this._setMarkInBtn =
-                this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-setmarkin-btn']);
-            this._setMarkInBtn.innerHTML = 'set in';
-            this._markInDisplayContainer.appendChild(this._setMarkInBtn);
+                this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-setmarkin-btn', 'amve-btn-child']);
+            this._setMarkInBtn.innerHTML = 'Set start';
+            this._setMarkInBtnContainer.appendChild(this._setMarkInBtn);
+
+            this._setMarkInIcon =
+                this._amveUX.createElement(['amve-btn', 'amve-setmarkin-icon', 'amve-btn-child']);
+            this._setMarkInBtnContainer.appendChild(this._setMarkInIcon);
 
             this._markInDisplay =
                 this._amveUX.createElement(['amve-markin-display']);
-            this._markInDisplayContainer.appendChild(this._markInDisplay);
+            
+            // this._markInDisplayContainer.appendChild(this._markInDisplay);
+            this._amveMarkInTimeDisplay.appendChild(this._markInDisplay);
 
             this._markInRightArrow =
                 this._amveUX.createElement(['amve-btn-control', 'amve-chevron-right', 'amve-markin-rightarrow']);
-            this._markInControls.appendChild(this._markInRightArrow);
+            // this._markInControls.appendChild(this._markInRightArrow);
+            this._amveMarkInRightArrow.appendChild(this._markInRightArrow);
 
             this._markOutLeftArrow =
                 this._amveUX.createElement(['amve-btn-control', 'amve-chevron-left', 'amve-markout-leftarrow']);
-            this._markOutControls.appendChild(this._markOutLeftArrow);
+            // this._markOutControls.appendChild(this._markOutLeftArrow);
+            this._amveMarkOutLeftArrow.appendChild(this._markOutLeftArrow);
 
             this._markOutDisplayContainer =
                 this._amveUX.createElement(['amve-markout-display-container']);
             this._markOutControls.appendChild(this._markOutDisplayContainer);
 
+            this._setMarkOutBtnContainer =
+                this._amveUX.createElement(['amve-btn', 'amve-btn-parent']);
+            // this._markOutDisplayContainer.appendChild(this._setMarkOutBtnContainer);
+            this._amveMarkOutLabel.appendChild(this._setMarkOutBtnContainer);
+
             this._setMarkOutBtn =
-                this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-setmarkout-btn']);
-            this._setMarkOutBtn.innerHTML = 'set out';
-            this._markOutDisplayContainer.appendChild(this._setMarkOutBtn);
+                this._amveUX.createElement(['amve-btn', 'amve-btn-text', 'amve-setmarkout-btn', 'amve-btn-child']);
+            this._setMarkOutBtn.innerHTML = 'Set end';
+            this._setMarkOutBtnContainer.appendChild(this._setMarkOutBtn);
+
+            this._setMarkOutIcon =
+                this._amveUX.createElement(['amve-btn', 'amve-setmarkout-icon', 'amve-btn-child']);
+            this._setMarkOutBtnContainer.appendChild(this._setMarkOutIcon);
 
             this._markOutDisplay =
                 this._amveUX.createElement(['amve-markout-display']);
-            this._markOutDisplayContainer.appendChild(this._markOutDisplay);
+            // this._markOutDisplayContainer.appendChild(this._markOutDisplay);
+            this._amveMarkOutTimeDisplay.appendChild(this._markOutDisplay);
 
             this._markOutRightArrow =
                 this._amveUX.createElement(['amve-btn-control', 'amve-chevron-right', 'amve-markout-rightarrow']);
-            this._markOutControls.appendChild(this._markOutRightArrow);
+            // this._markOutControls.appendChild(this._markOutRightArrow);
+            this._amveMarkOutRightArrow.appendChild(this._markOutRightArrow);
 
             this._amveUX.addPropertyChangedListener('mode', function () {
                 switch (that._amveUX.mode) {
@@ -192,11 +313,11 @@ module AMVE {
              */
             function checkMark() {
                 if (that._amveUX.clipData.markInPT >= 0 && (that._amveUX.mode == EditorModes.Trim || that._amveUX.clipData.markOutPT > 0)) {
-                    that._clipLengthDisplay.innerHTML = that._amveUX.formatTimeWords(that._amveUX.checkClipDuration());
-                    that._clipLengthDisplay.style.display = 'block';
+                    // that._clipLengthDisplay.innerHTML = that._amveUX.formatTimeWords(that._amveUX.checkClipDuration());
+                    // that._clipLengthDisplay.style.display = 'block';
                     that._exportBtn.classList.remove('amve-btn-disabled');
                 } else {
-                    that._clipLengthDisplay.style.display = 'none';
+                    // that._clipLengthDisplay.style.display = 'none';
                     that._exportBtn.classList.add('amve-btn-disabled');
                 }
 
@@ -251,9 +372,9 @@ module AMVE {
             /**
              * See AMVEUX.reset
              */
-            this._resetBtn.addEventListener('click', function () {
-                that._amveUX.reset();
-            });
+            // this._resetBtn.addEventListener('click', function () {
+            //     that._amveUX.reset();
+            // });
 
             /**
              * Sets the player time to the markIn value when the markIn display is clicked
@@ -408,4 +529,6 @@ module AMVE {
             return this._controlBarElement.clientHeight;
         }
     }
-}   
+}
+
+export = AMVE;

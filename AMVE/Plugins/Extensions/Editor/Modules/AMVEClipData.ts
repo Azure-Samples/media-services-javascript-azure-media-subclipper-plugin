@@ -1,9 +1,8 @@
-﻿/// <reference path='../Interfaces/IEventSource.ts' />
-/// <reference path='../Interfaces/IPropertyChangeEventSource.ts' />
-/// <reference path='../Modules/Common.ts' />
-/// <reference path='../Modules/ThumbnailData.ts' />
-
-"use strict";
+﻿import { IEventSource } from "../Interfaces/IEventSource";
+import { IPropertyChangeEventSource } from "../Interfaces/IPropertyChangeEventSource";
+import { EditorModes } from "../Modules/Common"
+import { ThumbnailData } from "../Modules/ThumbnailData";
+import { AMVEUX } from "../Modules/AMVEUX";
 
 module AMVE {
     /**
@@ -111,7 +110,7 @@ module AMVE {
             if (markInPT != this._markInPT) {
                 this._markInPT = markInPT;
                 this.propertyChanged('markInPT');
-                if (markInPT > 0) {
+                if (markInPT >= 0) {
                     this._markIn = this._amveUX.toMediaTime(markInPT);
                 } else {
                     this._markIn = -1;
@@ -290,4 +289,6 @@ module AMVE {
             }
         }
     }
-}  
+}
+
+export = AMVE;

@@ -1,30 +1,42 @@
-﻿/// <reference path='../../../../azuremediaplayer.d.ts' />
-/// <reference path='../Interfaces/IEventSource.ts' />
-/// <reference path='../Modules/Common.ts' />
-/// <reference path='../Modules/AMVEClipData.ts' />
-/// <reference path='../Modules/KeyboardShortcutConfig.ts' />
-/// <reference path='../Modules/ThumbnailData.ts' />
-/// <reference path='../Modules/AMVEUX.ts' />
+﻿/// <reference path='../../../../../typings/azuremediaplayer.d.ts' />
 
-module amp {
-    /**
-     * AMVE plugin instantiation
-     */
-    plugin('AMVE', function AMVEPlugin(options: Object) {
-        var _player: amp.Player = this;
-        var _amveCore: AMVE.AMVECore;
+import { IEventSource } from "../Interfaces/IEventSource";
+import { AMVEClipData } from "../Modules/AMVEClipData";
+// import { KeyboardShortcutConfig } from "../Modules/KeyboardShortcutConfig"
+import { KeyboardShortcutConfig, AdobePremierProShortcutConfig as AdobePremierPro, AvidShortcutConfig as Avid } from "../Modules/KeyboardShortcutConfig";
+import { AMVEUX } from "../Modules/AMVEUX";
 
-        if (options && options['containerId']) {
-            _amveCore = new AMVE.AMVECore(_player, options);
+/**
+ * AMVE plugin instantiation
+ */
+amp.plugin('AMVE', function AMVEPlugin(options: Object) {
+    var _player: amp.Player = this;
+    var _amveCore: AMVE.AMVECore;
+
+    if (options && options['containerId']) {
+        _amveCore = new AMVE.AMVECore(_player, options);
+    }
+    // Custom expose amve fully temporary
+    this._amveCore = _amveCore;
+    // Expose public API
+    this.videoEditor = {
+        setMarkIn: (value: number) => {
+            this._amveCore._amveUX.clipData.markInPT = value;
+        },
+        setMarkOut: (value: number) => {
+            this._amveCore._amveUX.clipData.markOutPT = value;
         }
-    });
-}
+    }
+});
 
+// module AMVE {
 module AMVE {
-
+    export class AdobePremierProShortcutConfig extends AdobePremierPro {}
+    export class AvidShortcutConfig extends Avid {}
     /**
      * Core logic for AMVE
      */
+
     export class AMVECore implements IEventSource {
         public player: amp.Player;
         public containerId: string;
@@ -91,3 +103,5 @@ module AMVE {
         }
     }
 }
+
+export = AMVE;

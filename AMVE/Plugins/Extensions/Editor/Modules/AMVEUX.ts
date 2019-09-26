@@ -1,16 +1,18 @@
-﻿/// <reference path='../Interfaces/IEventSource.ts' />
-/// <reference path='../Modules/Common.ts' />
-/// <reference path='../Modules/KeyboardShortcutConfig.ts' />
-/// <reference path='../Modules/Box.ts' />
-/// <reference path='../Modules/AMVETopControlBar.ts' />
-/// <reference path='../Modules/AMVEPlayerControlBar.ts' />
-/// <reference path='../Modules/AMVEMarkControlBar.ts' />
-/// <reference path='../Modules/AMVEScrubber.ts' />
-/// <reference path='../Modules/AMVEBottomControlBar.ts' />
-/// <reference path='../Modules/AMVESubmitDialog.ts' />
-/// <reference path='../Modules/AMVESettingsDialog.ts' />
-
-"use strict";
+﻿import { IEventSource } from "../Interfaces/IEventSource";
+import { EditorModes, AMVEFrameRates } from "../Modules/Common"
+import { KeyboardShortcutManager, KeyboardShortcutConfig } from "../Modules/KeyboardShortcutConfig"
+import { Box } from "../Modules/Box";
+import { AMVETopControlBar } from "../Modules/AMVETopControlBar"
+import { AMVEPlayerControlBar } from "../Modules/AMVEPlayerControlBar"
+import { AMVEMarkControlBar } from "../Modules/AMVEMarkControlBar";
+import { AMVEScrubber } from "../Modules/AMVEScrubber";
+import { AMVEBottomControlBar } from "../Modules/AMVEBottomControlBar";
+import { AMVESubmitDialog } from "../Modules/AMVESubmitDialog";
+import { AMVESettingsDialog } from "../Modules/AMVESettingsDialog";
+import { IPropertyChangeEventSource } from "../Interfaces/IPropertyChangeEventSource"
+import { AMVECore } from "../Core/AMVECore"
+import { ThumbnailData } from "../Modules/ThumbnailData";
+import { AMVEClipData } from "../Modules/AMVEClipData";
 
 module AMVE {
     /**
@@ -19,11 +21,11 @@ module AMVE {
     export class AMVEUX implements IPropertyChangeEventSource {
         public player: amp.Player;
         private _amveCore: AMVECore;
-        private _mode: EditorModes = EditorModes.Virtual;
+        private _mode: EditorModes = EditorModes.Rendered;
         private _frameRate: AMVEFrameRates = AMVEFrameRates.ThirtyFPS;
         private _container: HTMLElement;
         private _playerContainer: HTMLElement;
-        private _topControlBar: AMVETopControlBar;
+        // private _topControlBar: AMVETopControlBar;
         private _bottom: HTMLElement;
         private _playerControlBar: AMVEPlayerControlBar;
         private _markControlBar: AMVEMarkControlBar;
@@ -78,7 +80,7 @@ module AMVE {
                         this._thumbnailGeneratorCanvas.style.display = 'none';
                         this._thumbnailGeneratorContainer.appendChild(this._thumbnailGeneratorCanvas);
 
-                        this._topControlBar = new AMVETopControlBar(this);
+                        // this._topControlBar = new AMVETopControlBar(this);
 
                         if (this.player.playerElement().parentElement) {
                             this._playerContainer = this.createElement(['amve-player-container']);
@@ -94,9 +96,9 @@ module AMVE {
                         this.appendChild(this._bottom);
 
                         this._playerControlBar = new AMVEPlayerControlBar(this);
-                        this._markControlBar = new AMVEMarkControlBar(this);
-                        this._scrubber = new AMVEScrubber(this);
                         this._bottomControlBar = new AMVEBottomControlBar(this);
+                        this._scrubber = new AMVEScrubber(this);
+                        this._markControlBar = new AMVEMarkControlBar(this);
                         this._submitDlg = new AMVESubmitDialog(this);
                         this._settingsDlg = new AMVESettingsDialog(this);
                         this._animationsStyle = <HTMLStyleElement>document.createElement('style');
@@ -307,9 +309,9 @@ module AMVE {
          * Called when the page is resized to reposition the UX elements
          */
         private resize(): void {
-            this.resizePlayer();
-            this._submitDlg.resize();
-            this._settingsDlg.resize();
+            // this.resizePlayer();
+            // this._submitDlg.resize();
+            // this._settingsDlg.resize();
         }
 
         /**
@@ -324,7 +326,7 @@ module AMVE {
                     offset.right - 2;
 
                 var height = this._container.clientHeight -
-                    this._topControlBar.clientHeight -
+                    // this._topControlBar.clientHeight -
                     this._bottomControlBar.clientHeight -
                     offset.top -
                     offset.bottom;
@@ -618,21 +620,21 @@ module AMVE {
                         that._clipData.markOutPT = -1;
                     });
                 }
-                if (this._amveCore.keyboardShortcutConfig.changeModeVirtualShortcut) {
-                    this._keyboardShortcutMgr.addShortcut(this._amveCore.keyboardShortcutConfig.changeModeVirtualShortcut, function () {
-                        that.mode = EditorModes.Virtual;
-                    });
-                }
-                if (this._amveCore.keyboardShortcutConfig.changeModeRenderedShortcut) {
-                    this._keyboardShortcutMgr.addShortcut(this._amveCore.keyboardShortcutConfig.changeModeRenderedShortcut, function () {
-                        that.mode = EditorModes.Rendered;
-                    });
-                }
-                if (this._amveCore.keyboardShortcutConfig.changeModeTrimShortcut) {
-                    this._keyboardShortcutMgr.addShortcut(this._amveCore.keyboardShortcutConfig.changeModeTrimShortcut, function () {
-                        that.mode = EditorModes.Trim;
-                    });
-                }
+                // if (this._amveCore.keyboardShortcutConfig.changeModeVirtualShortcut) {
+                //     this._keyboardShortcutMgr.addShortcut(this._amveCore.keyboardShortcutConfig.changeModeVirtualShortcut, function () {
+                //         that.mode = EditorModes.Virtual;
+                //     });
+                // }
+                // if (this._amveCore.keyboardShortcutConfig.changeModeRenderedShortcut) {
+                //     this._keyboardShortcutMgr.addShortcut(this._amveCore.keyboardShortcutConfig.changeModeRenderedShortcut, function () {
+                //         that.mode = EditorModes.Rendered;
+                //     });
+                // }
+                // if (this._amveCore.keyboardShortcutConfig.changeModeTrimShortcut) {
+                //     this._keyboardShortcutMgr.addShortcut(this._amveCore.keyboardShortcutConfig.changeModeTrimShortcut, function () {
+                //         that.mode = EditorModes.Trim;
+                //     });
+                // }
             }
         }
 
@@ -856,7 +858,7 @@ module AMVE {
                         that._playerCoverImage.src = thumbnail.dataUrl;
                         that._playerCoverImage.width = playerWidth;
                         that._playerCoverImage.height = playerHeight;
-                        that._playerCoverImage.style.top = that._topControlBar.clientHeight + 'px';
+                        // that._playerCoverImage.style.top = that._topControlBar.clientHeight + 'px';
                         that._playerCoverImage.style.display = 'block';
                     }
                     that._submitToggle = false;
@@ -1160,9 +1162,7 @@ module AMVE {
 
                 var tnFreq = Math.round(that.checkClipDuration() / that.thumbnailCount);
 
-                getTn();
-
-                function getTn() {
+                const getTn = () => {
                     if (tnCount < that._thumbnailCount && lastTime <= endTime) {
                         that.player.currentTime(lastTime);
                         that.captureThumbnail(lastTime, function (thumbnail: ThumbnailData) {
@@ -1182,6 +1182,8 @@ module AMVE {
                         that.isThumbnailsGenerating = false;
                     }
                 }
+
+                getTn();
             }
         }
 
@@ -1427,4 +1429,6 @@ module AMVE {
             }
         }
     }
-} 
+}
+
+export = AMVE;

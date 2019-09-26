@@ -1,7 +1,4 @@
-﻿/// <reference path='../Modules/Common.ts' />
-/// <reference path='../Modules/AMVEUX.ts' />
-
-"use strict";
+﻿import { AMVEUX } from "../Modules/AMVEUX";
 
 module AMVE {
     /**
@@ -13,6 +10,7 @@ module AMVE {
         private _controlBarElement: HTMLElement;
         private _leftCol: HTMLElement;
         private _rightCol: HTMLElement;
+        private _rightColElements: HTMLElement;
         private _centerCol: HTMLElement;
         private _playBtn: HTMLElement;
         private _rwdBtn: HTMLElement;
@@ -20,6 +18,7 @@ module AMVE {
         private _liveBtn: HTMLElement;
         private _timeDisplay: HTMLElement;
         private _volumeButton: HTMLElement;
+        private _fullscreenButton: HTMLElement;
         private _volumeBar: HTMLElement;
         private _volumeTrack: HTMLElement;
         private _volumeFill: HTMLElement;
@@ -71,6 +70,10 @@ module AMVE {
                 this._amveUX.createElement(['amve-right-column']);
             this._controlBarElement.appendChild(this._rightCol);
 
+            this._rightColElements =
+                this._amveUX.createElement(['amve-right-column-elements']);
+            this._rightCol.appendChild(this._rightColElements);
+
             this._playBtn =
                 this._amveUX.createElement(['amve-btn', 'amve-btn-control', 'amve-play-btn']);
             this._leftCol.appendChild(this._playBtn);
@@ -93,9 +96,21 @@ module AMVE {
                 this._amveUX.createElement(['amve-time-display']);
             this._centerCol.appendChild(this._timeDisplay);
 
+            // this._volumeButton =
+            //     this._amveUX.createElement(['amve-btn', 'amve-btn-control', 'amve-volume-btn']);
+            // this._rightCol.appendChild(this._volumeButton);
+
+            // this._fullscreenButton =
+            //     this._amveUX.createElement(['amve-fullscreen-btn']);
+            // this._rightCol.appendChild(this._fullscreenButton);
+
             this._volumeButton =
-                this._amveUX.createElement(['amve-btn', 'amve-btn-control', 'amve-volume-btn']);
-            this._rightCol.appendChild(this._volumeButton);
+                this._amveUX.createElement(['amve-btn', 'amve-btn-control', 'amve-volume-btn', 'amve-right-column-element']);
+            this._rightColElements.appendChild(this._volumeButton);
+
+            this._fullscreenButton =
+                this._amveUX.createElement(['amve-btn', 'amve-btn-control', 'amve-fullscreen-btn', 'amve-right-column-element']);
+            this._rightColElements.appendChild(this._fullscreenButton);
 
             /**
              * Updates the player time display
@@ -148,10 +163,37 @@ module AMVE {
              */
             this._playBtn.addEventListener('click', function () {
                 that.resetFwdRwd();
+                if (that._amveUX.player.playerElement().classList.contains("amve-rewind")) {
+                    that._amveUX.player.playerElement().classList.remove("amve-rewind");
+                }
+                if (that._amveUX.player.playerElement().classList.contains("amve-fast-forward")) {
+                    that._amveUX.player.playerElement().classList.remove("amve-fast-forward");
+                }
                 if (that._amveUX.player.paused()) {
                     that._amveUX.player.play();
                 } else {
                     that._amveUX.player.pause();
+                }
+            });
+
+            const showOrHideControls = () => {
+                if (that._amveUX.player.controls()) {
+                    that._amveUX.player.controls(false);
+                } else {
+                    that._amveUX.player.controls(true);
+                }
+            };
+
+            that._amveUX.player.addEventListener(amp.eventName.fullscreenchange, showOrHideControls);
+            
+            /**
+             * Enter / Exit fullscreen mode
+             */
+            this._fullscreenButton.addEventListener('click', function () {
+                if (that._amveUX.player.isFullscreen()) {
+                    that._amveUX.player.exitFullscreen();
+                } else {
+                    that._amveUX.player.enterFullscreen();
                 }
             });
 
@@ -180,6 +222,12 @@ module AMVE {
              * Stops forwarding if forwarding, steps through rewinding otherwise
              */
             this._rwdBtn.addEventListener('click', function () {
+                if (!that._amveUX.player.playerElement().classList.contains("amve-rewind")) {
+                    that._amveUX.player.playerElement().classList.add("amve-rewind");
+                }
+                if (that._amveUX.player.playerElement().classList.contains("amve-fast-forward")) {
+                    that._amveUX.player.playerElement().classList.remove("amve-fast-forward");
+                }
                 that.rwd();
             });
 
@@ -187,6 +235,12 @@ module AMVE {
              * Stops rewinding if rewinding, steps through forwarding otherwise
              */
             this._fwdBtn.addEventListener('click', function () {
+                if (!that._amveUX.player.playerElement().classList.contains("amve-fast-forward")) {
+                    that._amveUX.player.playerElement().classList.add("amve-fast-forward");
+                }
+                if (that._amveUX.player.playerElement().classList.contains("amve-rewind")) {
+                    that._amveUX.player.playerElement().classList.remove("amve-rewind");
+                }
                 that.ffwd();
             });
 
@@ -257,10 +311,13 @@ module AMVE {
              */
             function positionAndDisplayVolume(): void {
                 var box = that._amveUX.findPosition(that._controlBarElement);
+                var volumeTopPosition = that._controlBarElement.parentElement.clientHeight;
 
                 that._volumeBar.style.display = 'block';
-                that._volumeBar.style.top = ((box.top - (that._volumeBar.clientHeight) - that._controlBarElement.clientHeight) - (that._volumeButton.clientHeight * 2) - 60) + 'px';
-                that._volumeBar.style.left = ((that._controlBarElement.clientWidth - that._volumeBar.clientWidth - (that._volumeButton.clientWidth / 2)) - 8) + 'px';
+                // that._volumeBar.style.top = ((box.top - (that._volumeBar.clientHeight) - that._controlBarElement.clientHeight) - (that._volumeButton.clientHeight * 2) - 60) + 'px';
+                that._volumeBar.style.bottom = volumeTopPosition + 'px';
+                // that._volumeBar.style.left = ((that._controlBarElement.clientWidth - that._volumeBar.clientWidth - (that._volumeButton.clientWidth / 2)) - 8) + 'px';
+                that._volumeBar.style.left = ((that._controlBarElement.clientWidth - that._volumeBar.clientWidth - (that._volumeButton.clientWidth / 2)) - 32) + 'px';
                 that._volumeButton.classList.remove('amve-muted');
 
                 var volume = that._amveUX.player.volume();
@@ -470,4 +527,6 @@ module AMVE {
             }
         }
     }
-} 
+}
+
+export = AMVE;

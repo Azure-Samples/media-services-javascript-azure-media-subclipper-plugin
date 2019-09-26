@@ -1,7 +1,5 @@
-﻿/// <reference path='../Modules/Common.ts' />
-/// <reference path='../Modules/AMVEUX.ts' />
-
-"use strict";
+﻿import { AMVEFrameRates } from "../Modules/Common"
+import { AMVEUX } from "../Modules/AMVEUX";
 
 module AMVE {
     /**
@@ -180,4 +178,6 @@ module AMVE {
             return this._settingsContainer.style;
         }
     }
-}   
+}
+
+export = AMVE;

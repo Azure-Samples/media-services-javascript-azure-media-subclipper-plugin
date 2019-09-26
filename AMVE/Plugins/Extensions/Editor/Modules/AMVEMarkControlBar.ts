@@ -1,7 +1,5 @@
-﻿/// <reference path='../Modules/Common.ts' />
-/// <reference path='../Modules/AMVEUX.ts' />
-
-"use strict";
+﻿import { EditorModes } from "../Modules/Common"
+import { AMVEUX } from "../Modules/AMVEUX";
 
 module AMVE {
     /**
@@ -10,6 +8,7 @@ module AMVE {
     export class AMVEMarkControlBar {
         private _amveUX: AMVEUX;
         private _markControlElement: HTMLElement;
+        private _markControlElementLabel: HTMLElement;
         private _markFillElement: HTMLElement;
         private _markInElement: HTMLElement;
         private _markOutElement: HTMLElement;
@@ -337,4 +336,6 @@ module AMVE {
             return this._markControlElement.clientHeight;
         }
     }
-} 
+}
+
+export = AMVE;

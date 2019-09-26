@@ -1,6 +1,4 @@
-﻿/// <reference path='../Modules/Common.ts' />
-
-module AMVE {
+﻿module AMVE {
     /**
      * Interface for event handling
      */
@@ -30,3 +28,5 @@ module AMVE {
         trigger(event: string);
     }
 }
+
+export = AMVE;

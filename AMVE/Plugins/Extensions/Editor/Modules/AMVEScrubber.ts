@@ -1,7 +1,5 @@
-﻿/// <reference path='../Modules/Common.ts' />
-/// <reference path='../Modules/AMVEUX.ts' />
-
-"use strict";
+﻿import { EditorModes } from "../Modules/Common"
+import { AMVEUX } from "../Modules/AMVEUX";
 
 module AMVE {
     /**
@@ -10,6 +8,7 @@ module AMVE {
     export class AMVEScrubber {
         private _amveUX: AMVEUX;
         private _scrubberElement: HTMLElement;
+        private _scrubberElementLabel: HTMLElement;
         private _scrubberZoomElement: HTMLElement;
         private _scrubberZoomInElement: HTMLElement;
         private _scrubberZoomOutElement: HTMLElement;
@@ -179,7 +178,7 @@ module AMVE {
                 var rootBox = that._amveUX.findPosition(that._amveUX.containerElement);
                 var seBox = that._amveUX.findPosition(that._scrubberElement);
                 var cwp = that._amveUX.getCWPercentage(newTime, that._scrubberElement);
-                var left = (seBox.left - rootBox.left - that._scrubberHandleElement.clientWidth) + 10 + cwp;
+                var left = (seBox.left - rootBox.left - that._scrubberHandleElement.clientWidth) + 23 + cwp;
                 that._scrubberHandleElement.style.left = left + 'px';
                 that._scrubberProgressElement.style.width = cwp + 'px';
             }
@@ -202,4 +201,6 @@ module AMVE {
             return this._scrubberElement.clientHeight;
         }
     }
-} 
+}
+
+export = AMVE;

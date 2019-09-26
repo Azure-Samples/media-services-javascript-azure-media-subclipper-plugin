@@ -1,0 +1,30 @@
+{
+  "name": "azure-media-video-edit",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.27.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "grunt": "1.0.1",
+    "grunt-check-dependencies": "^1.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-compress": "^1.2.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-newer": "^1.1.1",
+    "grunt-webpack": "^2.0.1",
+    "json-loader": "^0.5.4",
+    "source-map-loader": "^0.2.0",
+    "style-loader": "^0.15.0",
+    "ts-loader": "^2.0.2",
+    "tslint": "^4.5.1",
+    "tslint-eslint-rules": "^3.5.1",
+    "typescript": "^2.2.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2",
+    "webpack-uglify-js-plugin": "^1.1.9"
+  }
+}

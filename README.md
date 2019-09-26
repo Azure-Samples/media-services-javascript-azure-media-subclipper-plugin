@@ -265,9 +265,6 @@ keyboadShortcutConfig.markOutFiveFramesShortcut = 'alt+shift+.';
 keyboadShortcutConfig.undoShortcut = 'ctrl+z';
 keyboadShortcutConfig.redoShortcut = 'ctrl+y';
 keyboadShortcutConfig.exportShortcut = 's';
-keyboadShortcutConfig.changeModeVirtualShortcut = 'shift+v';
-keyboadShortcutConfig.changeModeRenderedShortcut = 'shift+r';
-keyboadShortcutConfig.changeModeTrimShortcut = 'shift+t';
 ```
 
 ##### 8. AMVE Plugin Parameters

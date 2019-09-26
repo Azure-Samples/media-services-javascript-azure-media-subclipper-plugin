@@ -1,8 +1,7 @@
-﻿/// <reference path='../Modules/Common.ts' />
-/// <reference path='../Modules/Tooltips.ts' />
-/// <reference path='../Modules/AMVEUX.ts' />
+﻿import { EditorModes } from "../Modules/Common"
+import { Tooltips } from "../Modules/Tooltips";
+import { AMVEUX } from "../Modules/AMVEUX";
 
-"use strict";
 
 module AMVE {
     /**
@@ -157,4 +156,6 @@ module AMVE {
             return this._controlBarElement.clientHeight;
         }
     }
-} 
+}
+
+export = AMVE;
